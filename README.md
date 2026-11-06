@@ -12,7 +12,7 @@ Shadowrocket（小火箭）规则配置：自用代理分流 + 微博去广告�
 
 ## 使用
 
-小火箭导入 `YYDS-3-v8.conf` 即可。配置内脚本与列表均走 `raw.githubusercontent.com/Momingshen/shadowrocket-config/main/...`，无需再单独导入 `.js`。
+小火箭导入 `YYDS-3-v8.conf` 即可。配置内脚本与列表均走 `raw.githubusercontent.com/stephen100710/shadowrocket-config/main/...`，无需再单独导入 `.js`。
 
 ## 注意
 
