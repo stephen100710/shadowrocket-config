@@ -1,0 +1,122 @@
+# RXlh-fast.yaml - 节点订阅 (Clash 格式,小火箭可直接订阅)
+# 来源订阅: https://blog.kuaiyu.cc/tree/RXlh.yaml (2026-11-23 快照)
+# 16 个节点,全部在 Colab + mihomo 实测下载速度 > 20 MB/s (2026-11-23)
+# 括号内为实测速度 / 延迟;原订阅里的 "null"/"None" 密码是转换器占位符,等同无密码,已省略
+proxies:
+  - name: "US-33"  # 78.8 MB/s, 40ms
+    type: http
+    server: 138.199.35.211
+    port: 9002
+    tls: true
+    skip-cert-verify: true
+    udp: true
+  - name: "US-32"  # 73.9 MB/s, 35ms
+    type: http
+    server: 138.199.35.204
+    port: 9002
+    tls: true
+    skip-cert-verify: true
+    udp: true
+  - name: "US-16"  # 73.9 MB/s, 39ms
+    type: http
+    server: 172.64.69.89
+    port: 443
+    tls: true
+    skip-cert-verify: true
+    udp: true
+  - name: "US-34"  # 67.0 MB/s, 31ms
+    type: http
+    server: 138.199.35.211
+    port: 9002
+    tls: true
+    skip-cert-verify: true
+    udp: true
+  - name: "US-28"  # 66.4 MB/s, 37ms
+    type: http
+    server: 138.199.35.211
+    port: 9002
+    tls: true
+    skip-cert-verify: true
+    udp: true
+  - name: "US-27"  # 63.9 MB/s, 38ms
+    type: http
+    server: 138.199.35.218
+    port: 9002
+    tls: true
+    skip-cert-verify: true
+    udp: true
+  - name: "US-25"  # 58.3 MB/s, 42ms
+    type: http
+    server: 138.199.35.216
+    port: 9002
+    tls: true
+    skip-cert-verify: true
+    udp: true
+  - name: "US-30"  # 54.2 MB/s, 33ms
+    type: http
+    server: 138.199.35.218
+    port: 9002
+    tls: true
+    skip-cert-verify: true
+    udp: true
+  - name: "US-21"  # 52.6 MB/s, 37ms
+    type: http
+    server: 172.64.68.89
+    port: 443
+    tls: true
+    skip-cert-verify: true
+    udp: true
+  - name: "US-26"  # 52.5 MB/s, 36ms
+    type: http
+    server: 138.199.35.206
+    port: 9002
+    tls: true
+    skip-cert-verify: true
+    udp: true
+  - name: "US-23"  # 50.8 MB/s, 43ms
+    type: http
+    server: 172.64.69.89
+    port: 443
+    tls: true
+    skip-cert-verify: true
+    udp: true
+  - name: "US-24"  # 50.6 MB/s, 38ms
+    type: http
+    server: 138.199.35.216
+    port: 9002
+    tls: true
+    skip-cert-verify: true
+    udp: true
+  - name: "US-22"  # 48.7 MB/s, 42ms
+    type: http
+    server: 172.64.68.89
+    port: 443
+    tls: true
+    skip-cert-verify: true
+    udp: true
+  - name: "US-29"  # 47.7 MB/s, 33ms
+    type: http
+    server: 138.199.35.206
+    port: 9002
+    tls: true
+    skip-cert-verify: true
+    udp: true
+  - name: "US-36"  # 44.2 MB/s, 38ms
+    type: http
+    server: 172.64.68.89
+    port: 443
+    tls: true
+    skip-cert-verify: true
+    udp: true
+  - name: "US-37"  # 21.3 MB/s, 155ms
+    type: http
+    server: 23.133.176.14
+    port: 443
+    tls: true
+    skip-cert-verify: true
+    udp: true
+
+proxy-groups:
+  - name: Fast
+    type: select
+    proxies: [US-33, US-32, US-16, US-34, US-28, US-27, US-25, US-30, US-21, US-26, US-23, US-24, US-22, US-29, US-36, US-37]
