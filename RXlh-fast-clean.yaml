@@ -1,60 +1,61 @@
 # RXlh-fast-clean.yaml - 干净节点订阅 (Clash 格式,小火箭可直接订阅)
 # 筛选标准:cleanip.io 纯净度评分 >= 60 且实测连通,且下载速度 > 3 MB/s
 # 评分测试 2026-11-23 21:34/21:57;速度测试 2026-11-23 22:50,每节点 5 秒上限
-# 共 12 个节点(原 11 个 + 2026-11-23 23:30 新订阅 MIJQvT8 新增 1 个:香港 08);US-21/23/16/36/22 五个节点出口是同一个 IP (2606:4700:3030::,Cloudflare CDN)
+# 共 12 个节点(原 11 个 + 2026-11-23 23:30 新订阅 MIJQvT8 新增 1 个:香港|62|4.5|08);美国|69|33.9|01、美国|69|33.6|02、美国|69|28.2|04、美国|69|27.0|05、美国|69|21.2|06 五个节点出口是同一个 IP (2606:4700:3030::,Cloudflare CDN)
 # 2026-11-23 23:30 新订阅 MIJQvT8 共 85 个节点,2 个三项全过;日本与已有日本 01 同节点(103.248.150.50:42000)重复,未重复加
-# 注意:节点名字里的国家是订阅原名,实际出口国家可能不同,以 cleanip 实测为准
+# 节点命名:地区|评分|速度|编号;地区为 cleanip 实测出口国家;编号按速度从高到低 01-12
+# 注意:原名英国 05 实测出口是墨西哥,已按实测命名为墨西哥|62|3.7|11
 proxies:
-- name: US-23  # cleanip 69 B · 33.9 MB/s
+- name: 美国|69|33.9|01  # cleanip 69 B · 33.9 MB/s
   type: http
   server: 172.64.69.89
   port: 443
   tls: true
   skip-cert-verify: true
   udp: true
-- name: US-16  # cleanip 69 B · 33.6 MB/s
+- name: 美国|69|33.6|02  # cleanip 69 B · 33.6 MB/s
   type: http
   server: 172.64.69.89
   port: 443
   tls: true
   skip-cert-verify: true
   udp: true
-- name: US-37  # cleanip 60 C · 30.0 MB/s
+- name: 美国|60|30.0|03  # cleanip 60 C · 30.0 MB/s
   type: http
   server: 23.133.176.14
   port: 443
   tls: true
   skip-cert-verify: true
   udp: true
-- name: US-36  # cleanip 69 B · 28.2 MB/s
+- name: 美国|69|28.2|04  # cleanip 69 B · 28.2 MB/s
   type: http
   server: 172.64.68.89
   port: 443
   tls: true
   skip-cert-verify: true
   udp: true
-- name: US-21  # cleanip 69 B · 27.0 MB/s
+- name: 美国|69|27.0|05  # cleanip 69 B · 27.0 MB/s
   type: http
   server: 172.64.68.89
   port: 443
   tls: true
   skip-cert-verify: true
   udp: true
-- name: US-22  # cleanip 69 B · 21.2 MB/s
+- name: 美国|69|21.2|06  # cleanip 69 B · 21.2 MB/s
   type: http
   server: 172.64.68.89
   port: 443
   tls: true
   skip-cert-verify: true
   udp: true
-- name: zhuhai.uk 🇺🇸美国 07  # cleanip 65 C · 6.6 MB/s
+- name: 美国|65|6.6|07  # cleanip 65 C · 6.6 MB/s
   type: socks5
   server: 66.253.2.69
   port: 62000
   udp: true
   username: u_rb1dba2
   password: l1tlrdx52v
-- name: zhuhai.uk 🇭🇰香港 08  # cleanip 62 C · 4.5 MB/s
+- name: 香港|62|4.5|08  # cleanip 62 C · 4.5 MB/s
   type: vless
   server: xjc02.clkhd.quest
   port: 10540
@@ -66,14 +67,14 @@ proxies:
     public-key: pRZJDZgN_twRpO_4NJTiVp_IiSgU4-XLI9hoXfgUzXo
   servername: itunes.apple.com
   client-fingerprint: chrome
-- name: zhuhai.uk 🇯🇵日本 01  # cleanip 63 C · 4.0 MB/s
+- name: 日本|63|4.0|09  # cleanip 63 C · 4.0 MB/s
   type: socks5
   server: 103.248.150.50
   port: 42000
   udp: true
   username: paZFN3JA
   password: EGJDy5Kg
-- name: zhuhai.uk 🇹🇼台湾  # cleanip 67 B · 3.9 MB/s
+- name: 台湾|67|3.9|10  # cleanip 67 B · 3.9 MB/s
   type: anytls
   server: rtifgjdr.df6h451rh.xin
   port: 443
@@ -81,14 +82,14 @@ proxies:
   udp: true
   sni: docs.microsoft.com
   skip-cert-verify: true
-- name: zhuhai.uk 🇬🇧英国 05  # cleanip 62 C · 3.7 MB/s
+- name: 墨西哥|62|3.7|11  # cleanip 62 C · 3.7 MB/s
   type: socks5
   server: 94.194.165.32
   port: 62000
   udp: true
   username: QyVdo5ks
   password: lcFa8dTH
-- name: HK-3  # cleanip 92 A+ · 3.4 MB/s
+- name: 香港|92|3.4|12  # cleanip 92 A+ · 3.4 MB/s
   type: http
   server: 38.76.140.254
   port: 8443
@@ -100,16 +101,16 @@ proxy-groups:
 - name: Fast
   type: select
   proxies:
-  - US-23
-  - US-16
-  - US-37
-  - US-36
-  - US-21
-  - US-22
-  - zhuhai.uk 🇺🇸美国 07
-  - zhuhai.uk 🇭🇰香港 08
-  - zhuhai.uk 🇯🇵日本 01
-  - zhuhai.uk 🇹🇼台湾
-  - zhuhai.uk 🇬🇧英国 05
-  - HK-3
+  - 美国|69|33.9|01
+  - 美国|69|33.6|02
+  - 美国|60|30.0|03
+  - 美国|69|28.2|04
+  - 美国|69|27.0|05
+  - 美国|69|21.2|06
+  - 美国|65|6.6|07
+  - 香港|62|4.5|08
+  - 日本|63|4.0|09
+  - 台湾|67|3.9|10
+  - 墨西哥|62|3.7|11
+  - 香港|92|3.4|12
 
