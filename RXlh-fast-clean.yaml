@@ -1,8 +1,9 @@
 # RXlh-fast-clean.yaml - 干净节点订阅 (Clash 格式,小火箭可直接订阅)
-# 从 RXlh-fast.yaml (111 个节点) 筛选:cleanip.io 纯净度评分 >= 60 且实测连通
-# 测试时间 2026-11-23 21:34,每节点 10 秒超时;共 7 个节点
-# 注意:US-21/23/16/36/22 五个节点出口是同一个 IP (2606:4700:3030::,Cloudflare CDN)
-# HK-3 92 A+ 住宅 IP;US-37 60 C 住宅 IP
+# 筛选标准:cleanip.io 纯净度评分 >= 60 且实测连通(延迟 5 秒超时,评分 10 秒超时)
+# 来源 1: RXlh-fast.yaml (111 个节点),2026-11-23 21:34 测,7 个达标
+# 来源 2: https://app.sublink.works/x/fVS5VkQ (48 个节点),2026-11-23 21:57 测,17 个达标
+# 共 24 个节点;US-21/23/16/36/22 五个节点出口是同一个 IP (2606:4700:3030::,Cloudflare CDN)
+# 注意:节点名字里的国家是订阅原名,实际出口国家可能不同(见评分表),以 cleanip 实测为准
 proxies:
 - name: HK-3  # cleanip 92 A+
   type: http
@@ -53,6 +54,126 @@ proxies:
   tls: true
   skip-cert-verify: true
   udp: true
+- name: zhuhai.uk 🇺🇸美国 04  # cleanip 80 B
+  type: socks5
+  server: 23.230.200.136
+  port: 62000
+  udp: true
+  username: uqywawrz
+  password: tta09q3b
+- name: zhuhai.uk 🇺🇸美国 05  # cleanip 80 B
+  type: socks5
+  server: 23.230.200.250
+  port: 62000
+  udp: true
+  username: kingstar123
+  password: kingstar123++
+- name: zhuhai.uk 🇺🇸美国 01  # cleanip 75 B
+  type: ss
+  server: 103.232.93.17
+  port: 8443
+  cipher: 2022-blake3-aes-128-gcm
+  password: qT1+kd0KB5v6sUmEyHdVJQ==
+  udp: true
+- name: zhuhai.uk 🇺🇸美国 03  # cleanip 70 B
+  type: socks5
+  server: 23.230.200.249
+  port: 62000
+  udp: true
+  username: kingstar123
+  password: kingstar123++
+- name: zhuhai.uk 🇹🇼台湾  # cleanip 67 B
+  type: anytls
+  server: rtifgjdr.df6h451rh.xin
+  port: 443
+  password: 2902c46c8493
+  udp: true
+  sni: docs.microsoft.com
+  skip-cert-verify: true
+- name: zhuhai.uk 🇹🇭泰国 02  # cleanip 67 B
+  type: socks5
+  server: 192.204.15.135
+  port: 42000
+  udp: true
+  username: X3s3JteD
+  password: mpbK00Pl
+- name: zhuhai.uk 🇺🇸美国 07  # cleanip 65 C
+  type: socks5
+  server: 66.253.2.69
+  port: 62000
+  udp: true
+  username: u_rb1dba2
+  password: l1tlrdx52v
+- name: zhuhai.uk 🇯🇵日本 01  # cleanip 63 C
+  type: socks5
+  server: 103.248.150.50
+  port: 42000
+  udp: true
+  username: paZFN3JA
+  password: EGJDy5Kg
+- name: zhuhai.uk 🇬🇧英国 02  # cleanip 62 C
+  type: socks5
+  server: 87.81.71.89
+  port: 42000
+  udp: true
+  username: user9353
+  password: KsIJdV2U
+- name: zhuhai.uk 🇬🇧英国 03  # cleanip 62 C
+  type: socks5
+  server: 87.81.70.239
+  port: 42000
+  udp: true
+  username: user2523
+  password: Ksnervw2
+- name: zhuhai.uk 🇮🇱以色列  # cleanip 62 C
+  type: socks5
+  server: 109.66.136.194
+  port: 62000
+  udp: true
+  username: r3ZzP8WW
+  password: zdnivBaI
+- name: zhuhai.uk 🇬🇧英国 05  # cleanip 62 C
+  type: socks5
+  server: 94.194.165.32
+  port: 62000
+  udp: true
+  username: QyVdo5ks
+  password: lcFa8dTH
+- name: zhuhai.uk 🇳🇱荷兰 03  # cleanip 62 C
+  type: anytls
+  server: theme.lovehk.xyz
+  port: 443
+  password: e34b472c-2a1b-4fbc-a9ca-6ec127d5fd85
+  udp: true
+  sni: theme.lovehk.xyz
+- name: zhuhai.uk 🇭🇰香港 04  # cleanip 62 C
+  type: socks5
+  server: 87.81.70.159
+  port: 42000
+  udp: true
+  username: user2523
+  password: Ksnervw2
+- name: zhuhai.uk 🇲🇽墨西哥 02  # cleanip 61 C
+  type: socks5
+  server: 144.225.47.68
+  port: 42000
+  udp: true
+  username: DJy1T0dt
+  password: sZnD8GTz
+- name: zhuhai.uk 🇹🇭泰国 01  # cleanip 61 C
+  type: socks5
+  server: 168.222.8.66
+  port: 42000
+  udp: true
+  username: JPjarpW3
+  password: ao3W5ZML
+- name: zhuhai.uk 🇬🇧英国 04  # cleanip 61 C
+  type: socks5
+  server: 82.47.152.174
+  port: 42000
+  udp: true
+  username: userLjVB
+  password: Ks4Iab43
 
 proxy-groups:
 - name: Fast
@@ -65,4 +186,21 @@ proxy-groups:
   - US-36
   - US-22
   - US-37
+  - zhuhai.uk 🇺🇸美国 04
+  - zhuhai.uk 🇺🇸美国 05
+  - zhuhai.uk 🇺🇸美国 01
+  - zhuhai.uk 🇺🇸美国 03
+  - zhuhai.uk 🇹🇼台湾
+  - zhuhai.uk 🇹🇭泰国 02
+  - zhuhai.uk 🇺🇸美国 07
+  - zhuhai.uk 🇯🇵日本 01
+  - zhuhai.uk 🇬🇧英国 02
+  - zhuhai.uk 🇬🇧英国 03
+  - zhuhai.uk 🇮🇱以色列
+  - zhuhai.uk 🇬🇧英国 05
+  - zhuhai.uk 🇳🇱荷兰 03
+  - zhuhai.uk 🇭🇰香港 04
+  - zhuhai.uk 🇲🇽墨西哥 02
+  - zhuhai.uk 🇹🇭泰国 01
+  - zhuhai.uk 🇬🇧英国 04
 
