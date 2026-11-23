@@ -1,7 +1,8 @@
 # RXlh-fast-clean.yaml - 干净节点订阅 (Clash 格式,小火箭可直接订阅)
 # 筛选标准:cleanip.io 纯净度评分 >= 60 且实测连通,且下载速度 > 3 MB/s
 # 评分测试 2026-11-23 21:34/21:57;速度测试 2026-11-23 22:50,每节点 5 秒上限
-# 共 11 个节点(24 个里 11 个速度达标);US-21/23/16/36/22 五个节点出口是同一个 IP (2606:4700:3030::,Cloudflare CDN)
+# 共 12 个节点(原 11 个 + 2026-11-23 23:30 新订阅 MIJQvT8 新增 1 个:香港 08);US-21/23/16/36/22 五个节点出口是同一个 IP (2606:4700:3030::,Cloudflare CDN)
+# 2026-11-23 23:30 新订阅 MIJQvT8 共 85 个节点,2 个三项全过;日本与已有日本 01 同节点(103.248.150.50:42000)重复,未重复加
 # 注意:节点名字里的国家是订阅原名,实际出口国家可能不同,以 cleanip 实测为准
 proxies:
 - name: US-23  # cleanip 69 B · 33.9 MB/s
@@ -53,6 +54,18 @@ proxies:
   udp: true
   username: u_rb1dba2
   password: l1tlrdx52v
+- name: zhuhai.uk 🇭🇰香港 08  # cleanip 62 C · 4.5 MB/s
+  type: vless
+  server: xjc02.clkhd.quest
+  port: 10540
+  uuid: d4797a42-9b2e-4a1e-b865-8d7877069ce4
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  reality-opts:
+    public-key: pRZJDZgN_twRpO_4NJTiVp_IiSgU4-XLI9hoXfgUzXo
+  servername: itunes.apple.com
+  client-fingerprint: chrome
 - name: zhuhai.uk 🇯🇵日本 01  # cleanip 63 C · 4.0 MB/s
   type: socks5
   server: 103.248.150.50
@@ -94,6 +107,7 @@ proxy-groups:
   - US-21
   - US-22
   - zhuhai.uk 🇺🇸美国 07
+  - zhuhai.uk 🇭🇰香港 08
   - zhuhai.uk 🇯🇵日本 01
   - zhuhai.uk 🇹🇼台湾
   - zhuhai.uk 🇬🇧英国 05
