@@ -1,10 +1,11 @@
 # RXlh-fast.yaml - 节点订阅 (Clash 格式,小火箭可直接订阅)
-# 来源 1: https://blog.kuaiyu.cc/tree/RXlh.yaml (2026-11-23 快照, 30 个节点)
-# 来源 2: https://xinshoucun.net/sub/clash-20261122.yaml (2026-11-23 快照, 100 个节点)
-# 共 130 个节点,全部为实测下载速度 > 3 MB/s (2026-11-23)
+# 来源 1: https://blog.kuaiyu.cc/tree/RXlh.yaml (2026-11-23 快照)
+# 来源 2: https://xinshoucun.net/sub/clash-20261122.yaml (2026-11-23 快照)
+# 共 126 个节点,全部为实测下载速度 > 3 MB/s (2026-11-23)
+# 2026-11-23 12:11 延迟复测:130 个里 126 个连通,删了 4 个不通的(US-216.106.178.169-0175、US-38、RU-4、US-3)
 # 括号内为实测速度;http 节点无账号密码(原订阅里的 "null"/"None" 是转换器占位符,已省略)
 # TW-1 为 anytls、DE-5 为 vless+xhttp,小火箭不一定支持这两种协议,订阅后如果缺这两个节点就是这个原因
-# 注意:新订阅的速度测试里 81 个结果走的是 Cachefly 备用源(Cloudflare 限流后 fallback),与 Cloudflare 直测的结果不完全可比;单次测速波动也较大
+# 注意:延迟是在 Colab 机房测的,你手机上的延迟会不一样,看相对排名就行;速度是昨晚测的,单次测速波动较大
 proxies:
 - name: US-33  # 78.8 MB/s
   type: http
@@ -191,25 +192,12 @@ proxies:
   port: 19999
   cipher: aes-256-gcm
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: US-216.106.178.169-0175  # 17.1 MB/s
-  type: ss
-  server: 216.106.178.169
-  port: 19999
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
 - name: US-137.184.89.151-0237  # 16.0 MB/s
   type: ss
   server: 137.184.89.151
   port: 19999
   cipher: aes-256-gcm
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: US-38  # 15.7 MB/s
-  type: http
-  server: 129.153.93.183
-  port: 443
-  tls: true
-  skip-cert-verify: true
-  udp: true
 - name: US-149.40.57.138-0187  # 15.2 MB/s
   type: ss
   server: 149.40.57.138
@@ -758,20 +746,6 @@ proxies:
   server: 128.199.116.219
   port: 9090
   udp: true
-- name: RU-4  # 4.2 MB/s
-  client-fingerprint: chrome
-  encryption: none
-  grpc-opts:
-    grpc-service-name: mobile.api.Event
-  network: grpc
-  port: 443
-  server: vps3.nemnogogo.com
-  tls: true
-  type: vless
-  udp: true
-  uuid: 38308ff1-5aa9-494f-a25a-0f2870d56b3e
-  xudp: true
-  servername: vps3.nemnogogo.com
 - name: SG-15.235.182.183-0161  # 4.2 MB/s
   type: ss
   server: 15.235.182.183
@@ -828,14 +802,6 @@ proxies:
   port: 445
   cipher: aes-256-gcm
   password: zDNVedRFPQexG9v
-- name: US-3  # 3.0 MB/s
-  auth: 713142c9-ad09-4894-b35c-645423f3f6c9
-  password: 713142c9-ad09-4894-b35c-645423f3f6c9
-  port: 443
-  server: media.embrofree.org
-  skip-cert-verify: true
-  sni: media.embrofree.org
-  type: hysteria2
 proxy-groups:
 - name: Fast
   type: select
@@ -868,9 +834,7 @@ proxy-groups:
   - US-173.244.56.9-0183
   - US-35
   - US-149.40.57.134-0155
-  - US-216.106.178.169-0175
   - US-137.184.89.151-0237
-  - US-38
   - US-149.40.57.138-0187
   - US-38.128.66.32-0152
   - US-149.40.57.133-0261
@@ -959,7 +923,6 @@ proxy-groups:
   - ES-79.127.139.242-0151
   - CA-51.222.12.127-0230
   - Other-5
-  - RU-4
   - SG-15.235.182.183-0161
   - SG-15.235.164.133-0211
   - ES-5.188.181.201-5393
@@ -969,4 +932,3 @@ proxy-groups:
   - TH-1
   - HK-3
   - CA-51.222.141.125-0459
-  - US-3
