@@ -1,266 +1,414 @@
 # RXlh-fast.yaml - 节点订阅 (Clash 格式,小火箭可直接订阅)
 # 来源 1: https://blog.kuaiyu.cc/tree/RXlh.yaml (2026-11-23 快照)
 # 来源 2: https://xinshoucun.net/sub/clash-20261122.yaml (2026-11-23 快照)
-# 共 126 个节点,全部为实测下载速度 > 3 MB/s (2026-11-23)
-# 2026-11-23 12:11 延迟复测:130 个里 126 个连通,删了 4 个不通的(US-216.106.178.169-0175、US-38、RU-4、US-3)
-# 括号内为实测速度;http 节点无账号密码(原订阅里的 "null"/"None" 是转换器占位符,已省略)
-# TW-1 为 anytls、DE-5 为 vless+xhttp,小火箭不一定支持这两种协议,订阅后如果缺这两个节点就是这个原因
-# 注意:延迟是在 Colab 机房测的,你手机上的延迟会不一样,看相对排名就行;速度是昨晚测的,单次测速波动较大
+# 共 111 个节点,全部为 2026-11-23 13:15 实测下载速度 > 3 MB/s
+# 2026-11-23 12:11 延迟复测删了 4 个不通的;13:15 速度复测又删了 15 个低于 3 MB/s 或 0 速度的
+# 括号内为本次实测速度;http 节点无账号密码(原订阅里的 "null"/"None" 是转换器占位符,已省略)
+# DE-5 为 vless+xhttp,小火箭不一定支持,订阅后如果缺这个节点就是这个原因(TW-1 已在本次复测中删掉)
+# 注意:本次 126 个里 101 个走的是 Cachefly 备用源(Cloudflare 限流后 fallback),与 Cloudflare 直测的结果不完全可比;单次测速波动也较大
 proxies:
-- name: US-33  # 78.8 MB/s
+- name: GB-82.38.31.208-0166  # 118.5 MB/s
+  type: ss
+  server: 82.38.31.208
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: k1dBOmOB4oqi7Ump37a1bQ
+- name: GB-82.38.31.181-0167  # 114.8 MB/s
+  type: ss
+  server: 82.38.31.181
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: k1dBOmOB4oqi7Ump37a1bQ
+- name: GB-82.38.31.180-0140  # 114.7 MB/s
+  type: ss
+  server: 82.38.31.180
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: k1dBOmOB4oqi7Ump37a1bQ
+- name: GB-82.38.31.205-5304  # 111.2 MB/s
+  type: ss
+  server: 82.38.31.205
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: k1dBOmOB4oqi7Ump37a1bQ
+- name: GB-82.38.31.217-0168  # 108.3 MB/s
+  type: ss
+  server: 82.38.31.217
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: k1dBOmOB4oqi7Ump37a1bQ
+- name: GB-82.38.31.206-0171  # 97.4 MB/s
+  type: ss
+  server: 82.38.31.206
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: k1dBOmOB4oqi7Ump37a1bQ
+- name: AE-151.241.19.36-0135  # 94.7 MB/s
+  type: ss
+  server: 151.241.19.36
+  port: 19999
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+- name: GB-82.38.31.190-0142  # 90.2 MB/s
+  type: ss
+  server: 82.38.31.190
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: k1dBOmOB4oqi7Ump37a1bQ
+- name: GB-82.38.31.192-0305  # 82.8 MB/s
+  type: ss
+  server: 82.38.31.192
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: k1dBOmOB4oqi7Ump37a1bQ
+- name: AE-151.241.19.29-0138  # 77.7 MB/s
+  type: ss
+  server: 151.241.19.29
+  port: 19999
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+- name: GB-178.83.185.156-0227  # 77.6 MB/s
+  type: ss
+  server: 178.83.185.156
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+- name: NL-109.201.152.181-0162  # 75.2 MB/s
+  type: ss
+  server: 109.201.152.181
+  port: 443
+  cipher: aes-128-cfb
+  password: shadowsocks
+- name: GB-82.38.31.35-0222  # 72.2 MB/s
+  type: ss
+  server: 82.38.31.35
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+- name: US-21  # 68.3 MB/s
   type: http
-  server: 138.199.35.211
+  server: 172.64.68.89
+  port: 443
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: GB-82.38.31.203-5284  # 67.8 MB/s
+  type: ss
+  server: 82.38.31.203
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: k1dBOmOB4oqi7Ump37a1bQ
+- name: GB-82.38.31.214-0306  # 67.8 MB/s
+  type: ss
+  server: 82.38.31.214
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: k1dBOmOB4oqi7Ump37a1bQ
+- name: DE-35  # 66.0 MB/s
+  type: http
+  server: 158.173.154.4
   port: 9002
   tls: true
   skip-cert-verify: true
   udp: true
-- name: US-32  # 73.9 MB/s
-  type: http
-  server: 138.199.35.204
-  port: 9002
-  tls: true
-  skip-cert-verify: true
-  udp: true
-- name: US-16  # 73.9 MB/s
+- name: US-23  # 63.3 MB/s
   type: http
   server: 172.64.69.89
   port: 443
   tls: true
   skip-cert-verify: true
   udp: true
-- name: US-34  # 67.0 MB/s
-  type: http
-  server: 138.199.35.211
-  port: 9002
-  tls: true
-  skip-cert-verify: true
-  udp: true
-- name: US-28  # 66.4 MB/s
-  type: http
-  server: 138.199.35.211
-  port: 9002
-  tls: true
-  skip-cert-verify: true
-  udp: true
-- name: US-27  # 63.9 MB/s
-  type: http
-  server: 138.199.35.218
-  port: 9002
-  tls: true
-  skip-cert-verify: true
-  udp: true
-- name: US-25  # 58.3 MB/s
-  type: http
-  server: 138.199.35.216
-  port: 9002
-  tls: true
-  skip-cert-verify: true
-  udp: true
-- name: US-30  # 54.2 MB/s
-  type: http
-  server: 138.199.35.218
-  port: 9002
-  tls: true
-  skip-cert-verify: true
-  udp: true
-- name: US-21  # 52.6 MB/s
-  type: http
-  server: 172.64.68.89
+- name: GB-82.38.31.162-0226  # 63.2 MB/s
+  type: ss
+  server: 82.38.31.162
   port: 443
-  tls: true
-  skip-cert-verify: true
-  udp: true
-- name: US-26  # 52.5 MB/s
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+- name: GB-158.173.24.73-0209  # 61.2 MB/s
+  type: ss
+  server: 158.173.24.73
+  port: 443
+  cipher: aes-128-gcm
+  password: shadowsocks
+- name: NL-26  # 59.6 MB/s
   type: http
-  server: 138.199.35.206
+  server: 84.17.47.150
   port: 9002
   tls: true
   skip-cert-verify: true
   udp: true
-- name: US-23  # 50.8 MB/s
+- name: DE-193.108.119.2-0136  # 59.3 MB/s
+  type: ss
+  server: 193.108.119.2
+  port: 19999
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+- name: US-16  # 59.0 MB/s
   type: http
   server: 172.64.69.89
   port: 443
   tls: true
   skip-cert-verify: true
   udp: true
-- name: US-24  # 50.6 MB/s
-  type: http
-  server: 138.199.35.216
-  port: 9002
-  tls: true
-  skip-cert-verify: true
-  udp: true
-- name: US-22  # 48.7 MB/s
+- name: US-36  # 58.5 MB/s
   type: http
   server: 172.64.68.89
   port: 443
   tls: true
   skip-cert-verify: true
   udp: true
-- name: US-29  # 47.7 MB/s
+- name: GB-82.38.31.216-0176  # 56.9 MB/s
+  type: ss
+  server: 82.38.31.216
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: k1dBOmOB4oqi7Ump37a1bQ
+- name: GB-82.38.31.194-0304  # 56.3 MB/s
+  type: ss
+  server: 82.38.31.194
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: k1dBOmOB4oqi7Ump37a1bQ
+- name: GB-185.176.206.9-0130  # 56.1 MB/s
+  type: ss
+  server: 185.176.206.9
+  port: 19999
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+- name: NL-21  # 52.7 MB/s
   type: http
-  server: 138.199.35.206
+  server: 84.17.47.147
   port: 9002
   tls: true
   skip-cert-verify: true
   udp: true
-- name: US-95.215.201.18-0170  # 47.1 MB/s
+- name: DE-23.157.88.43-0150  # 48.7 MB/s
   type: ss
-  server: 95.215.201.18
+  server: 23.157.88.43
   port: 19999
   cipher: aes-256-gcm
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: US-36  # 44.2 MB/s
+- name: US-22  # 47.0 MB/s
   type: http
   server: 172.64.68.89
   port: 443
   tls: true
   skip-cert-verify: true
   udp: true
-- name: US-169.197.142.68-0131  # 37.1 MB/s
+- name: GB-82.38.31.179-0156  # 45.9 MB/s
   type: ss
-  server: 169.197.142.68
+  server: 82.38.31.179
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: k1dBOmOB4oqi7Ump37a1bQ
+- name: GB-82.38.31.191-0143  # 45.4 MB/s
+  type: ss
+  server: 82.38.31.191
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: k1dBOmOB4oqi7Ump37a1bQ
+- name: DE-193.108.119.3-0141  # 44.6 MB/s
+  type: ss
+  server: 193.108.119.3
   port: 19999
   cipher: aes-256-gcm
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: US-156.146.38.170-0158  # 28.5 MB/s
+- name: FR-167.17.64.22-0186  # 43.6 MB/s
   type: ss
-  server: 156.146.38.170
-  port: 443
-  cipher: aes-128-gcm
-  password: shadowsocks
-- name: US-156.146.38.169-0157  # 28.2 MB/s
-  type: ss
-  server: 156.146.38.169
-  port: 443
-  cipher: aes-128-gcm
-  password: shadowsocks
-- name: US-156.146.38.168-0198  # 28.1 MB/s
-  type: ss
-  server: 156.146.38.168
-  port: 443
-  cipher: aes-128-gcm
-  password: shadowsocks
-- name: US-167.88.62.203-0121  # 26.6 MB/s
-  type: ss
-  server: 167.88.62.203
+  server: 167.17.64.22
   port: 19999
   cipher: aes-256-gcm
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: US-37  # 21.3 MB/s
-  type: http
-  server: 23.133.176.14
+- name: GB-82.38.31.47-0225  # 43.4 MB/s
+  type: ss
+  server: 82.38.31.47
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+- name: FR-167.17.64.27-0214  # 43.1 MB/s
+  type: ss
+  server: 167.17.64.27
+  port: 19999
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+- name: GB-142.202.51.22-0196  # 42.6 MB/s
+  type: ss
+  server: 142.202.51.22
+  port: 19999
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+- name: GB-82.38.31.212-0163  # 42.1 MB/s
+  type: ss
+  server: 82.38.31.212
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: k1dBOmOB4oqi7Ump37a1bQ
+- name: UA-185.164.175.81-0213  # 42.0 MB/s
+  type: ss
+  server: 185.164.175.81
+  port: 19999
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+- name: FR-23.162.152.22-0192  # 41.0 MB/s
+  type: ss
+  server: 23.162.152.22
+  port: 19999
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+- name: FR-167.17.64.175-0221  # 41.0 MB/s
+  type: ss
+  server: 167.17.64.175
+  port: 19999
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+- name: GB-38.114.120.221-0244  # 38.2 MB/s
+  type: ss
+  server: 38.114.120.221
+  port: 19999
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+- name: GB-82.110.60.9-0132  # 37.7 MB/s
+  type: ss
+  server: 82.110.60.9
+  port: 19999
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+- name: GB-146.70.61.37-0154  # 37.2 MB/s
+  type: ss
+  server: 146.70.61.37
+  port: 8080
+  cipher: rc4-md5
+  password: 14fFPrbezE3HDZzsMOr6
+- name: FR-172.99.189.142-0194  # 36.2 MB/s
+  type: ss
+  server: 172.99.189.142
+  port: 19999
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+- name: DE-57.129.83.85-0137  # 35.8 MB/s
+  type: ss
+  server: 57.129.83.85
+  port: 19999
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+- name: FR-38.109.228.110-0191  # 34.0 MB/s
+  type: ss
+  server: 38.109.228.110
+  port: 19999
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+- name: GB-82.38.31.66-0228  # 32.2 MB/s
+  type: ss
+  server: 82.38.31.66
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+- name: SE-138.199.55.243-0181  # 31.6 MB/s
+  type: ss
+  server: 138.199.55.243
+  port: 19999
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+- name: GB-82.38.31.61-0218  # 31.5 MB/s
+  type: ss
+  server: 82.38.31.61
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+- name: CH-23.166.88.127-0188  # 30.2 MB/s
+  type: ss
+  server: 23.166.88.127
+  port: 19999
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+- name: ES-66.163.118.103-0149  # 27.1 MB/s
+  type: ss
+  server: 66.163.118.103
+  port: 19999
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+- name: ES-167.17.71.167-0205  # 26.9 MB/s
+  type: ss
+  server: 167.17.71.167
+  port: 19999
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+- name: GB-198.244.202.215-0203  # 23.4 MB/s
+  type: ss
+  server: 198.244.202.215
+  port: 19999
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+- name: ES-79.127.139.242-0151  # 21.2 MB/s
+  type: ss
+  server: 79.127.139.242
+  port: 19999
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+- name: GB-198.244.201.129-0195  # 20.7 MB/s
+  type: ss
+  server: 198.244.201.129
+  port: 19999
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+- name: IT-202.50.253.81-0253  # 20.3 MB/s
+  type: ss
+  server: 202.50.253.81
+  port: 19999
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+- name: RU-3  # 20.1 MB/s
+  client-fingerprint: firefox
+  grpc-opts:
+    grpc-mode: gun
+    grpc-service-name: mobile.api.Event
+  network: grpc
   port: 443
+  server: 201.24.116.192
   tls: true
-  skip-cert-verify: true
+  type: vless
   udp: true
-- name: US-23.150.152.38-0159  # 20.4 MB/s
+  uuid: 38308ff1-5aa9-494f-a25a-0f2870d56b3e
+  servername: vps3.nemnogogo.com
+- name: GB-82.38.31.46-0223  # 19.9 MB/s
   type: ss
-  server: 23.150.152.38
-  port: 19999
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: CA-149.22.95.183-0219  # 19.9 MB/s
+  server: 82.38.31.46
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+- name: GB-82.38.31.49-0217  # 12.0 MB/s
   type: ss
-  server: 149.22.95.183
+  server: 82.38.31.49
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+- name: US-37.19.198.243-0177  # 11.2 MB/s
+  type: ss
+  server: 37.19.198.243
   port: 443
   cipher: aes-128-gcm
   password: shadowsocks
-- name: US-173.244.56.6-0127  # 19.0 MB/s
-  type: ss
-  server: 173.244.56.6
-  port: 443
-  cipher: aes-128-gcm
-  password: shadowsocks
-- name: US-173.244.56.9-0183  # 18.9 MB/s
-  type: ss
-  server: 173.244.56.9
-  port: 443
-  cipher: aes-128-gcm
-  password: shadowsocks
-- name: US-35  # 18.2 MB/s
-  type: http
-  server: 138.199.35.204
-  port: 9002
-  tls: true
-  skip-cert-verify: true
-  udp: true
-- name: US-149.40.57.134-0155  # 17.6 MB/s
-  type: ss
-  server: 149.40.57.134
-  port: 19999
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: US-137.184.89.151-0237  # 16.0 MB/s
-  type: ss
-  server: 137.184.89.151
-  port: 19999
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: US-149.40.57.138-0187  # 15.2 MB/s
-  type: ss
-  server: 149.40.57.138
-  port: 19999
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: US-38.128.66.32-0152  # 15.0 MB/s
-  type: ss
-  server: 38.128.66.32
-  port: 19999
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: US-149.40.57.133-0261  # 13.2 MB/s
-  type: ss
-  server: 149.40.57.133
-  port: 19999
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: US-84.20.27.183-0146  # 13.1 MB/s
-  type: ss
-  server: 84.20.27.183
-  port: 19999
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: US-193.151.163.18-0116  # 11.2 MB/s
-  type: ss
-  server: 193.151.163.18
-  port: 19999
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: US-38.22.17.219-0148  # 11.0 MB/s
-  type: ss
-  server: 38.22.17.219
-  port: 19999
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: US-172.111.36.123-0124  # 10.8 MB/s
-  type: ss
-  server: 172.111.36.123
-  port: 19999
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: US-45.86.51.18-0117  # 10.4 MB/s
-  type: ss
-  server: 45.86.51.18
-  port: 19999
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: US-37.19.198.236-0199  # 10.4 MB/s
+- name: US-37.19.198.236-0199  # 10.9 MB/s
   type: ss
   server: 37.19.198.236
   port: 443
   cipher: aes-128-gcm
   password: shadowsocks
-- name: US-38.91.100.39-0178  # 9.9 MB/s
+- name: US-37.19.198.160-0185  # 10.2 MB/s
   type: ss
-  server: 38.91.100.39
+  server: 37.19.198.160
+  port: 443
+  cipher: aes-128-gcm
+  password: shadowsocks
+- name: US-193.151.163.18-0116  # 9.6 MB/s
+  type: ss
+  server: 193.151.163.18
   port: 19999
   cipher: aes-256-gcm
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: US-172.111.38.72-0193  # 9.6 MB/s
+- name: US-38.91.100.39-0178  # 9.6 MB/s
   type: ss
-  server: 172.111.38.72
+  server: 38.91.100.39
   port: 19999
   cipher: aes-256-gcm
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
@@ -270,352 +418,158 @@ proxies:
   port: 443
   cipher: aes-128-gcm
   password: shadowsocks
-- name: US-193.151.160.9-0119  # 9.5 MB/s
+- name: US-45.86.51.18-0117  # 9.4 MB/s
   type: ss
-  server: 193.151.160.9
+  server: 45.86.51.18
   port: 19999
   cipher: aes-256-gcm
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: US-185.230.230.18-0122  # 9.3 MB/s
+- name: US-172.111.38.72-0193  # 8.5 MB/s
+  type: ss
+  server: 172.111.38.72
+  port: 19999
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+- name: US-149.40.57.138-0187  # 8.5 MB/s
+  type: ss
+  server: 149.40.57.138
+  port: 19999
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+- name: US-149.40.57.134-0155  # 8.4 MB/s
+  type: ss
+  server: 149.40.57.134
+  port: 19999
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+- name: US-149.40.57.133-0261  # 8.4 MB/s
+  type: ss
+  server: 149.40.57.133
+  port: 19999
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+- name: US-38.128.66.32-0152  # 8.4 MB/s
+  type: ss
+  server: 38.128.66.32
+  port: 19999
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+- name: US-185.230.230.18-0122  # 8.4 MB/s
   type: ss
   server: 185.230.230.18
   port: 19999
   cipher: aes-256-gcm
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: US-167.88.63.99-0134  # 9.2 MB/s
+- name: US-172.111.36.123-0124  # 8.0 MB/s
+  type: ss
+  server: 172.111.36.123
+  port: 19999
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+- name: US-167.88.63.99-0134  # 8.0 MB/s
   type: ss
   server: 167.88.63.99
   port: 19999
   cipher: aes-256-gcm
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: US-38.22.17.129-0123  # 9.1 MB/s
+- name: US-38.22.17.129-0123  # 7.9 MB/s
   type: ss
   server: 38.22.17.129
   port: 19999
   cipher: aes-256-gcm
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: US-37.19.198.243-0177  # 9.0 MB/s
+- name: US-38.22.17.219-0148  # 7.8 MB/s
   type: ss
-  server: 37.19.198.243
-  port: 443
-  cipher: aes-128-gcm
-  password: shadowsocks
-- name: US-193.151.160.18-0120  # 8.5 MB/s
+  server: 38.22.17.219
+  port: 19999
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+- name: US-193.151.160.18-0120  # 7.4 MB/s
   type: ss
   server: 193.151.160.18
   port: 19999
   cipher: aes-256-gcm
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: US-37.19.198.160-0185  # 8.5 MB/s
+- name: US-193.151.160.9-0119  # 7.4 MB/s
   type: ss
-  server: 37.19.198.160
+  server: 193.151.160.9
+  port: 19999
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+- name: US-156.146.38.170-0158  # 7.3 MB/s
+  type: ss
+  server: 156.146.38.170
   port: 443
   cipher: aes-128-gcm
   password: shadowsocks
-- name: US-38.91.107.188-0164  # 7.9 MB/s
+- name: US-156.146.38.169-0157  # 7.3 MB/s
+  type: ss
+  server: 156.146.38.169
+  port: 443
+  cipher: aes-128-gcm
+  password: shadowsocks
+- name: US-156.146.38.168-0198  # 7.2 MB/s
+  type: ss
+  server: 156.146.38.168
+  port: 443
+  cipher: aes-128-gcm
+  password: shadowsocks
+- name: US-38.91.107.188-0164  # 7.1 MB/s
   type: ss
   server: 38.91.107.188
   port: 19999
   cipher: aes-256-gcm
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: CA-137.184.174.93-0184  # 7.8 MB/s
-  type: ss
-  server: 137.184.174.93
-  port: 8080
-  cipher: rc4-md5
-  password: 14fFPrbezE3HDZzsMOr6
-- name: JP-149.22.87.240-0207  # 7.4 MB/s
-  type: ss
-  server: 149.22.87.240
-  port: 443
-  cipher: aes-128-gcm
-  password: shadowsocks
-- name: JP-149.22.87.204-0197  # 7.1 MB/s
-  type: ss
-  server: 149.22.87.204
-  port: 443
-  cipher: aes-128-gcm
-  password: shadowsocks
-- name: JP-149.22.87.241-0200  # 7.1 MB/s
-  type: ss
-  server: 149.22.87.241
-  port: 443
-  cipher: aes-128-gcm
-  password: shadowsocks
 - name: US-162.251.62.31-0160  # 7.0 MB/s
   type: ss
   server: 162.251.62.31
   port: 19999
   cipher: aes-256-gcm
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: GB-158.173.24.73-0209  # 6.4 MB/s
+- name: US-84.20.27.183-0146  # 6.9 MB/s
   type: ss
-  server: 158.173.24.73
-  port: 443
-  cipher: aes-128-gcm
-  password: shadowsocks
-- name: FR-167.17.64.22-0186  # 6.2 MB/s
-  type: ss
-  server: 167.17.64.22
+  server: 84.20.27.183
   port: 19999
   cipher: aes-256-gcm
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: FR-167.17.64.175-0221  # 6.2 MB/s
+- name: CA-137.184.174.93-0184  # 6.4 MB/s
   type: ss
-  server: 167.17.64.175
+  server: 137.184.174.93
+  port: 8080
+  cipher: rc4-md5
+  password: 14fFPrbezE3HDZzsMOr6
+- name: US-137.184.89.151-0237  # 6.2 MB/s
+  type: ss
+  server: 137.184.89.151
   port: 19999
   cipher: aes-256-gcm
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: FR-38.109.228.110-0191  # 6.1 MB/s
+- name: US-95.215.201.18-0170  # 6.2 MB/s
   type: ss
-  server: 38.109.228.110
+  server: 95.215.201.18
   port: 19999
   cipher: aes-256-gcm
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: FR-23.162.152.22-0192  # 6.1 MB/s
+- name: CA-51.222.12.127-0230  # 6.0 MB/s
   type: ss
-  server: 23.162.152.22
+  server: 51.222.12.127
+  port: 445
+  cipher: aes-256-gcm
+  password: zDNVedRFPQexG9v
+- name: US-167.88.62.203-0121  # 5.8 MB/s
+  type: ss
+  server: 167.88.62.203
   port: 19999
   cipher: aes-256-gcm
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: GB-82.38.31.216-0176  # 6.0 MB/s
-  type: ss
-  server: 82.38.31.216
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: k1dBOmOB4oqi7Ump37a1bQ
-- name: GB-82.38.31.192-0305  # 5.9 MB/s
-  type: ss
-  server: 82.38.31.192
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: k1dBOmOB4oqi7Ump37a1bQ
-- name: DE-193.108.119.3-0141  # 5.9 MB/s
-  type: ss
-  server: 193.108.119.3
-  port: 19999
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: AE-151.241.19.29-0138  # 5.9 MB/s
-  type: ss
-  server: 151.241.19.29
-  port: 19999
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: GB-82.38.31.190-0142  # 5.9 MB/s
-  type: ss
-  server: 82.38.31.190
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: k1dBOmOB4oqi7Ump37a1bQ
-- name: GB-82.38.31.194-0304  # 5.9 MB/s
-  type: ss
-  server: 82.38.31.194
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: k1dBOmOB4oqi7Ump37a1bQ
-- name: GB-185.176.206.9-0130  # 5.9 MB/s
-  type: ss
-  server: 185.176.206.9
-  port: 19999
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: GB-82.38.31.179-0156  # 5.9 MB/s
-  type: ss
-  server: 82.38.31.179
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: k1dBOmOB4oqi7Ump37a1bQ
-- name: DE-23.157.88.43-0150  # 5.9 MB/s
-  type: ss
-  server: 23.157.88.43
-  port: 19999
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: GB-82.38.31.205-5304  # 5.9 MB/s
-  type: ss
-  server: 82.38.31.205
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: k1dBOmOB4oqi7Ump37a1bQ
-- name: GB-82.38.31.206-0171  # 5.9 MB/s
-  type: ss
-  server: 82.38.31.206
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: k1dBOmOB4oqi7Ump37a1bQ
-- name: GB-82.38.31.191-0143  # 5.9 MB/s
-  type: ss
-  server: 82.38.31.191
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: k1dBOmOB4oqi7Ump37a1bQ
-- name: GB-82.38.31.208-0166  # 5.8 MB/s
-  type: ss
-  server: 82.38.31.208
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: k1dBOmOB4oqi7Ump37a1bQ
-- name: GB-82.38.31.217-0168  # 5.8 MB/s
-  type: ss
-  server: 82.38.31.217
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: k1dBOmOB4oqi7Ump37a1bQ
-- name: GB-82.38.31.49-0217  # 5.7 MB/s
-  type: ss
-  server: 82.38.31.49
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-- name: GB-82.38.31.162-0226  # 5.7 MB/s
-  type: ss
-  server: 82.38.31.162
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-- name: UA-185.164.175.81-0213  # 5.6 MB/s
-  type: ss
-  server: 185.164.175.81
-  port: 19999
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: CH-23.166.88.127-0188  # 5.6 MB/s
-  type: ss
-  server: 23.166.88.127
-  port: 19999
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: FR-167.17.64.27-0214  # 5.6 MB/s
-  type: ss
-  server: 167.17.64.27
-  port: 19999
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: GB-82.38.31.46-0223  # 5.6 MB/s
-  type: ss
-  server: 82.38.31.46
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-- name: GB-38.114.120.221-0244  # 5.5 MB/s
-  type: ss
-  server: 38.114.120.221
-  port: 19999
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: GB-82.38.31.47-0225  # 5.5 MB/s
-  type: ss
-  server: 82.38.31.47
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-- name: GB-82.38.31.180-0140  # 5.5 MB/s
-  type: ss
-  server: 82.38.31.180
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: k1dBOmOB4oqi7Ump37a1bQ
-- name: GB-142.202.51.22-0196  # 5.5 MB/s
-  type: ss
-  server: 142.202.51.22
-  port: 19999
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: GB-198.244.201.129-0195  # 5.4 MB/s
-  type: ss
-  server: 198.244.201.129
-  port: 19999
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: GB-82.38.31.181-0167  # 5.4 MB/s
-  type: ss
-  server: 82.38.31.181
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: k1dBOmOB4oqi7Ump37a1bQ
-- name: GB-82.38.31.212-0163  # 5.4 MB/s
-  type: ss
-  server: 82.38.31.212
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: k1dBOmOB4oqi7Ump37a1bQ
-- name: SE-138.199.55.243-0181  # 5.3 MB/s
-  type: ss
-  server: 138.199.55.243
-  port: 19999
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: GB-82.38.31.203-5284  # 5.3 MB/s
-  type: ss
-  server: 82.38.31.203
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: k1dBOmOB4oqi7Ump37a1bQ
-- name: DE-193.108.119.2-0136  # 5.3 MB/s
-  type: ss
-  server: 193.108.119.2
-  port: 19999
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: GB-82.110.60.9-0132  # 5.3 MB/s
-  type: ss
-  server: 82.110.60.9
-  port: 19999
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: ES-167.17.71.167-0205  # 5.2 MB/s
-  type: ss
-  server: 167.17.71.167
-  port: 19999
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: DE-57.129.83.85-0137  # 5.1 MB/s
-  type: ss
-  server: 57.129.83.85
-  port: 19999
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: GB-178.83.185.156-0227  # 5.1 MB/s
-  type: ss
-  server: 178.83.185.156
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-- name: ES-66.163.118.103-0149  # 5.0 MB/s
-  type: ss
-  server: 66.163.118.103
-  port: 19999
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: TW-1  # 5.0 MB/s
-  password: 2902c46c8493
-  port: 443
-  server: rtifgjdr.df6h451rh.xin
-  skip-cert-verify: true
-  sni: docs.microsoft.com
-  type: anytls
-  udp: true
-- name: GB-82.38.31.61-0218  # 4.9 MB/s
-  type: ss
-  server: 82.38.31.61
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-- name: GB-82.38.31.214-0306  # 4.9 MB/s
-  type: ss
-  server: 82.38.31.214
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: k1dBOmOB4oqi7Ump37a1bQ
-- name: US-49  # 4.8 MB/s
+- name: US-37  # 5.7 MB/s
   type: http
-  server: 24.225.10.211
+  server: 23.133.176.14
   port: 443
   tls: true
   skip-cert-verify: true
   udp: true
-- name: DE-5  # 4.8 MB/s
+- name: DE-5  # 5.6 MB/s
   client-fingerprint: chrome
   network: xhttp
   port: 4443
@@ -629,306 +583,244 @@ proxies:
     mode: auto
     path: /api/v1/sync/
   servername: swo2.nexfile.net
-- name: NL-109.201.152.181-0162  # 4.8 MB/s
-  type: ss
-  server: 109.201.152.181
-  port: 443
-  cipher: aes-128-cfb
-  password: shadowsocks
-- name: GB-146.70.61.37-0154  # 4.8 MB/s
-  type: ss
-  server: 146.70.61.37
-  port: 8080
-  cipher: rc4-md5
-  password: 14fFPrbezE3HDZzsMOr6
-- name: NL-26  # 4.7 MB/s
-  type: http
-  server: 84.17.47.150
-  port: 9002
-  tls: true
-  skip-cert-verify: true
-  udp: true
-- name: SG-149.88.107.74-0172  # 4.7 MB/s
-  type: ss
-  server: 149.88.107.74
-  port: 19999
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: SG-149.88.106.74-0189  # 4.7 MB/s
-  type: ss
-  server: 149.88.106.74
-  port: 19999
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: GB-198.244.202.215-0203  # 4.7 MB/s
-  type: ss
-  server: 198.244.202.215
-  port: 19999
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: SG-149.88.107.47-0179  # 4.7 MB/s
-  type: ss
-  server: 149.88.107.47
-  port: 19999
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: CH-186.190.215.251-0208  # 4.5 MB/s
-  type: ss
-  server: 186.190.215.251
-  port: 19999
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: DE-35  # 4.4 MB/s
-  type: http
-  server: 158.173.154.4
-  port: 9002
-  tls: true
-  skip-cert-verify: true
-  udp: true
-- name: SG-51.79.228.131-0210  # 4.4 MB/s
-  type: ss
-  server: 51.79.228.131
-  port: 19999
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: NL-21  # 4.4 MB/s
-  type: http
-  server: 84.17.47.147
-  port: 9002
-  tls: true
-  skip-cert-verify: true
-  udp: true
-- name: RU-3  # 4.4 MB/s
-  client-fingerprint: firefox
-  grpc-opts:
-    grpc-mode: gun
-    grpc-service-name: mobile.api.Event
-  network: grpc
-  port: 443
-  server: 201.24.116.192
-  tls: true
-  type: vless
-  udp: true
-  uuid: 38308ff1-5aa9-494f-a25a-0f2870d56b3e
-  servername: vps3.nemnogogo.com
-- name: GB-82.38.31.35-0222  # 4.4 MB/s
-  type: ss
-  server: 82.38.31.35
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-- name: FR-172.99.189.142-0194  # 4.3 MB/s
-  type: ss
-  server: 172.99.189.142
-  port: 19999
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: GB-82.38.31.66-0228  # 4.3 MB/s
-  type: ss
-  server: 82.38.31.66
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-- name: ES-79.127.139.242-0151  # 4.3 MB/s
-  type: ss
-  server: 79.127.139.242
-  port: 19999
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: CA-51.222.12.127-0230  # 4.3 MB/s
-  type: ss
-  server: 51.222.12.127
-  port: 445
-  cipher: aes-256-gcm
-  password: zDNVedRFPQexG9v
-- name: Other-5  # 4.2 MB/s
-  type: http
-  server: 128.199.116.219
-  port: 9090
-  udp: true
-- name: SG-15.235.182.183-0161  # 4.2 MB/s
-  type: ss
-  server: 15.235.182.183
-  port: 19999
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: SG-15.235.164.133-0211  # 4.1 MB/s
-  type: ss
-  server: 15.235.164.133
-  port: 19999
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: ES-5.188.181.201-5393  # 4.1 MB/s
-  type: ss
-  server: 5.188.181.201
-  port: 9027
-  cipher: aes-256-cfb
-  password: EXN3S3eQpjE7EJu8
-- name: AE-151.241.19.36-0135  # 4.0 MB/s
-  type: ss
-  server: 151.241.19.36
-  port: 19999
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: CA-51.222.136.236-0235  # 3.5 MB/s
+- name: CA-51.222.136.236-0235  # 5.6 MB/s
   type: ss
   server: 51.222.136.236
   port: 8882
   cipher: aes-256-gcm
   password: kDWvXYZoTBcGkC4
-- name: IT-202.50.253.81-0253  # 3.2 MB/s
+- name: CA-149.22.95.183-0219  # 5.5 MB/s
   type: ss
-  server: 202.50.253.81
+  server: 149.22.95.183
+  port: 443
+  cipher: aes-128-gcm
+  password: shadowsocks
+- name: US-169.197.142.68-0131  # 5.5 MB/s
+  type: ss
+  server: 169.197.142.68
   port: 19999
   cipher: aes-256-gcm
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: TH-1  # 3.1 MB/s
-  password: mpbK00Pl
-  port: 42000
-  server: 192.204.15.135
-  type: socks5
+- name: ES-5.188.181.201-5393  # 4.9 MB/s
+  type: ss
+  server: 5.188.181.201
+  port: 9027
+  cipher: aes-256-cfb
+  password: EXN3S3eQpjE7EJu8
+- name: US-23.150.152.38-0159  # 4.7 MB/s
+  type: ss
+  server: 23.150.152.38
+  port: 19999
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+- name: CA-51.222.141.125-0459  # 4.6 MB/s
+  type: ss
+  server: 51.222.141.125
+  port: 445
+  cipher: aes-256-gcm
+  password: zDNVedRFPQexG9v
+- name: US-173.244.56.6-0127  # 4.6 MB/s
+  type: ss
+  server: 173.244.56.6
+  port: 443
+  cipher: aes-128-gcm
+  password: shadowsocks
+- name: US-26  # 4.3 MB/s
+  type: http
+  server: 138.199.35.206
+  port: 9002
+  tls: true
+  skip-cert-verify: true
   udp: true
-  username: X3s3JteD
-- name: HK-3  # 3.1 MB/s
+- name: US-25  # 4.3 MB/s
+  type: http
+  server: 138.199.35.216
+  port: 9002
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: US-29  # 4.3 MB/s
+  type: http
+  server: 138.199.35.206
+  port: 9002
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: US-30  # 4.3 MB/s
+  type: http
+  server: 138.199.35.218
+  port: 9002
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: US-28  # 4.2 MB/s
+  type: http
+  server: 138.199.35.211
+  port: 9002
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: US-32  # 4.1 MB/s
+  type: http
+  server: 138.199.35.204
+  port: 9002
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: US-35  # 4.1 MB/s
+  type: http
+  server: 138.199.35.204
+  port: 9002
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: US-34  # 4.0 MB/s
+  type: http
+  server: 138.199.35.211
+  port: 9002
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: US-33  # 4.0 MB/s
+  type: http
+  server: 138.199.35.211
+  port: 9002
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: US-24  # 4.0 MB/s
+  type: http
+  server: 138.199.35.216
+  port: 9002
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: US-27  # 4.0 MB/s
+  type: http
+  server: 138.199.35.218
+  port: 9002
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: HK-3  # 3.4 MB/s
   type: http
   server: 38.76.140.254
   port: 8443
   tls: true
   skip-cert-verify: true
   udp: true
-- name: CA-51.222.141.125-0459  # 3.0 MB/s
-  type: ss
-  server: 51.222.141.125
-  port: 445
-  cipher: aes-256-gcm
-  password: zDNVedRFPQexG9v
 proxy-groups:
 - name: Fast
   type: select
   proxies:
-  - US-33
-  - US-32
-  - US-16
-  - US-34
-  - US-28
-  - US-27
-  - US-25
-  - US-30
+  - GB-82.38.31.208-0166
+  - GB-82.38.31.181-0167
+  - GB-82.38.31.180-0140
+  - GB-82.38.31.205-5304
+  - GB-82.38.31.217-0168
+  - GB-82.38.31.206-0171
+  - AE-151.241.19.36-0135
+  - GB-82.38.31.190-0142
+  - GB-82.38.31.192-0305
+  - AE-151.241.19.29-0138
+  - GB-178.83.185.156-0227
+  - NL-109.201.152.181-0162
+  - GB-82.38.31.35-0222
   - US-21
-  - US-26
+  - GB-82.38.31.203-5284
+  - GB-82.38.31.214-0306
+  - DE-35
   - US-23
-  - US-24
-  - US-22
-  - US-29
-  - US-95.215.201.18-0170
+  - GB-82.38.31.162-0226
+  - GB-158.173.24.73-0209
+  - NL-26
+  - DE-193.108.119.2-0136
+  - US-16
   - US-36
-  - US-169.197.142.68-0131
+  - GB-82.38.31.216-0176
+  - GB-82.38.31.194-0304
+  - GB-185.176.206.9-0130
+  - NL-21
+  - DE-23.157.88.43-0150
+  - US-22
+  - GB-82.38.31.179-0156
+  - GB-82.38.31.191-0143
+  - DE-193.108.119.3-0141
+  - FR-167.17.64.22-0186
+  - GB-82.38.31.47-0225
+  - FR-167.17.64.27-0214
+  - GB-142.202.51.22-0196
+  - GB-82.38.31.212-0163
+  - UA-185.164.175.81-0213
+  - FR-23.162.152.22-0192
+  - FR-167.17.64.175-0221
+  - GB-38.114.120.221-0244
+  - GB-82.110.60.9-0132
+  - GB-146.70.61.37-0154
+  - FR-172.99.189.142-0194
+  - DE-57.129.83.85-0137
+  - FR-38.109.228.110-0191
+  - GB-82.38.31.66-0228
+  - SE-138.199.55.243-0181
+  - GB-82.38.31.61-0218
+  - CH-23.166.88.127-0188
+  - ES-66.163.118.103-0149
+  - ES-167.17.71.167-0205
+  - GB-198.244.202.215-0203
+  - ES-79.127.139.242-0151
+  - GB-198.244.201.129-0195
+  - IT-202.50.253.81-0253
+  - RU-3
+  - GB-82.38.31.46-0223
+  - GB-82.38.31.49-0217
+  - US-37.19.198.243-0177
+  - US-37.19.198.236-0199
+  - US-37.19.198.160-0185
+  - US-193.151.163.18-0116
+  - US-38.91.100.39-0178
+  - US-37.19.198.244-0182
+  - US-45.86.51.18-0117
+  - US-172.111.38.72-0193
+  - US-149.40.57.138-0187
+  - US-149.40.57.134-0155
+  - US-149.40.57.133-0261
+  - US-38.128.66.32-0152
+  - US-185.230.230.18-0122
+  - US-172.111.36.123-0124
+  - US-167.88.63.99-0134
+  - US-38.22.17.129-0123
+  - US-38.22.17.219-0148
+  - US-193.151.160.18-0120
+  - US-193.151.160.9-0119
   - US-156.146.38.170-0158
   - US-156.146.38.169-0157
   - US-156.146.38.168-0198
+  - US-38.91.107.188-0164
+  - US-162.251.62.31-0160
+  - US-84.20.27.183-0146
+  - CA-137.184.174.93-0184
+  - US-137.184.89.151-0237
+  - US-95.215.201.18-0170
+  - CA-51.222.12.127-0230
   - US-167.88.62.203-0121
   - US-37
-  - US-23.150.152.38-0159
-  - CA-149.22.95.183-0219
-  - US-173.244.56.6-0127
-  - US-173.244.56.9-0183
-  - US-35
-  - US-149.40.57.134-0155
-  - US-137.184.89.151-0237
-  - US-149.40.57.138-0187
-  - US-38.128.66.32-0152
-  - US-149.40.57.133-0261
-  - US-84.20.27.183-0146
-  - US-193.151.163.18-0116
-  - US-38.22.17.219-0148
-  - US-172.111.36.123-0124
-  - US-45.86.51.18-0117
-  - US-37.19.198.236-0199
-  - US-38.91.100.39-0178
-  - US-172.111.38.72-0193
-  - US-37.19.198.244-0182
-  - US-193.151.160.9-0119
-  - US-185.230.230.18-0122
-  - US-167.88.63.99-0134
-  - US-38.22.17.129-0123
-  - US-37.19.198.243-0177
-  - US-193.151.160.18-0120
-  - US-37.19.198.160-0185
-  - US-38.91.107.188-0164
-  - CA-137.184.174.93-0184
-  - JP-149.22.87.240-0207
-  - JP-149.22.87.204-0197
-  - JP-149.22.87.241-0200
-  - US-162.251.62.31-0160
-  - GB-158.173.24.73-0209
-  - FR-167.17.64.22-0186
-  - FR-167.17.64.175-0221
-  - FR-38.109.228.110-0191
-  - FR-23.162.152.22-0192
-  - GB-82.38.31.216-0176
-  - GB-82.38.31.192-0305
-  - DE-193.108.119.3-0141
-  - AE-151.241.19.29-0138
-  - GB-82.38.31.190-0142
-  - GB-82.38.31.194-0304
-  - GB-185.176.206.9-0130
-  - GB-82.38.31.179-0156
-  - DE-23.157.88.43-0150
-  - GB-82.38.31.205-5304
-  - GB-82.38.31.206-0171
-  - GB-82.38.31.191-0143
-  - GB-82.38.31.208-0166
-  - GB-82.38.31.217-0168
-  - GB-82.38.31.49-0217
-  - GB-82.38.31.162-0226
-  - UA-185.164.175.81-0213
-  - CH-23.166.88.127-0188
-  - FR-167.17.64.27-0214
-  - GB-82.38.31.46-0223
-  - GB-38.114.120.221-0244
-  - GB-82.38.31.47-0225
-  - GB-82.38.31.180-0140
-  - GB-142.202.51.22-0196
-  - GB-198.244.201.129-0195
-  - GB-82.38.31.181-0167
-  - GB-82.38.31.212-0163
-  - SE-138.199.55.243-0181
-  - GB-82.38.31.203-5284
-  - DE-193.108.119.2-0136
-  - GB-82.110.60.9-0132
-  - ES-167.17.71.167-0205
-  - DE-57.129.83.85-0137
-  - GB-178.83.185.156-0227
-  - ES-66.163.118.103-0149
-  - TW-1
-  - GB-82.38.31.61-0218
-  - GB-82.38.31.214-0306
-  - US-49
   - DE-5
-  - NL-109.201.152.181-0162
-  - GB-146.70.61.37-0154
-  - NL-26
-  - SG-149.88.107.74-0172
-  - SG-149.88.106.74-0189
-  - GB-198.244.202.215-0203
-  - SG-149.88.107.47-0179
-  - CH-186.190.215.251-0208
-  - DE-35
-  - SG-51.79.228.131-0210
-  - NL-21
-  - RU-3
-  - GB-82.38.31.35-0222
-  - FR-172.99.189.142-0194
-  - GB-82.38.31.66-0228
-  - ES-79.127.139.242-0151
-  - CA-51.222.12.127-0230
-  - Other-5
-  - SG-15.235.182.183-0161
-  - SG-15.235.164.133-0211
-  - ES-5.188.181.201-5393
-  - AE-151.241.19.36-0135
   - CA-51.222.136.236-0235
-  - IT-202.50.253.81-0253
-  - TH-1
-  - HK-3
+  - CA-149.22.95.183-0219
+  - US-169.197.142.68-0131
+  - ES-5.188.181.201-5393
+  - US-23.150.152.38-0159
   - CA-51.222.141.125-0459
+  - US-173.244.56.6-0127
+  - US-26
+  - US-25
+  - US-29
+  - US-30
+  - US-28
+  - US-32
+  - US-35
+  - US-34
+  - US-33
+  - US-24
+  - US-27
+  - HK-3
