@@ -1,10 +1,11 @@
 # RXlh-fast-clean.yaml - 干净节点订阅 (Clash 格式,小火箭可直接订阅)
 # 筛选标准:cleanip.io 纯净度评分 >= 60 且实测连通,且下载速度 > 3 MB/s
 # 评分测试 2026-11-23 21:34/21:57;速度测试 2026-11-23 22:50,每节点 5 秒上限
-# 共 14 个节点(原 12 个 + 2026-11-24 00:37 新村订阅 clash-20261123 新增 2 个:芬兰|65|3.7|12、新加坡|68|3.2|14);美国|69|33.9|01、美国|69|33.6|02、美国|69|28.2|04、美国|69|27.0|05、美国|69|21.2|06 五个节点出口是同一个 IP (2606:4700:3030::,Cloudflare CDN)
+# 共 17 个节点(原 14 个 + 2026-11-24 14:16 GitHub 订阅 zhuhaiuk/free-nodes 新增 3 个:越南|94|11.1|07、香港|95|7.4|08、印度尼西亚|88|5.0|10);美国|69|33.9|01、美国|69|33.6|02、美国|69|28.2|04、美国|69|27.0|05、美国|69|21.2|06 五个节点出口是同一个 IP (2606:4700:3030::,Cloudflare CDN)
 # 2026-11-23 23:30 新订阅 MIJQvT8 共 85 个节点,2 个三项全过;日本与已有日本 01 同节点(103.248.150.50:42000)重复,未重复加
-# 节点命名:地区|评分|速度|编号;地区为 cleanip 实测出口国家;编号按速度从高到低 01-12
-# 注意:原名英国 05 实测出口是墨西哥,已按实测命名为墨西哥|62|3.7|11
+# 2026-11-24 14:16 GitHub 订阅 zhuhaiuk/free-nodes 共 33 个节点,4 个三项全过;US - zhuhai.uk 05 (172.64.69.89:443)与已有美国节点重复,未重复加
+# 节点命名:地区|评分|速度|编号;地区为 cleanip 实测出口国家;编号按速度从高到低 01-17
+# 注意:原名英国 05 实测出口是墨西哥,已按实测命名为墨西哥|62|3.7|14
 proxies:
 - name: 美国|69|33.9|01  # cleanip 69 B · 33.9 MB/s
   type: http
@@ -48,14 +49,34 @@ proxies:
   tls: true
   skip-cert-verify: true
   udp: true
-- name: 美国|65|6.6|07  # cleanip 65 C · 6.6 MB/s
+- name: 越南|94|11.1|07  # cleanip 94 A+ · 11.1 MB/s
+  type: socks5
+  server: 221.133.22.195
+  port: 62000
+  username: KUs4xRXd
+  password: 480w0Yy4
+- name: 香港|95|7.4|08  # cleanip 95 A+ · 7.4 MB/s
+  type: anytls
+  server: 5641sdds.df6h451rh.xin
+  port: 443
+  password: 0324fbc29561
+  udp: true
+  sni: images.ctfassets.net
+  skip-cert-verify: true
+- name: 美国|65|6.6|09  # cleanip 65 C · 6.6 MB/s
   type: socks5
   server: 66.253.2.69
   port: 62000
   udp: true
   username: u_rb1dba2
   password: l1tlrdx52v
-- name: 香港|62|4.5|08  # cleanip 62 C · 4.5 MB/s
+- name: 印度尼西亚|88|5.0|10  # cleanip 88 A · 5.0 MB/s
+  type: socks5
+  server: 203.84.138.59
+  port: 62000
+  username: 9tcjLp2W
+  password: RRWtX6XP
+- name: 香港|62|4.5|11  # cleanip 62 C · 4.5 MB/s
   type: vless
   server: xjc02.clkhd.quest
   port: 10540
@@ -67,14 +88,14 @@ proxies:
     public-key: pRZJDZgN_twRpO_4NJTiVp_IiSgU4-XLI9hoXfgUzXo
   servername: itunes.apple.com
   client-fingerprint: chrome
-- name: 日本|63|4.0|09  # cleanip 63 C · 4.0 MB/s
+- name: 日本|63|4.0|12  # cleanip 63 C · 4.0 MB/s
   type: socks5
   server: 103.248.150.50
   port: 42000
   udp: true
   username: paZFN3JA
   password: EGJDy5Kg
-- name: 台湾|67|3.9|10  # cleanip 67 B · 3.9 MB/s
+- name: 台湾|67|3.9|13  # cleanip 67 B · 3.9 MB/s
   type: anytls
   server: rtifgjdr.df6h451rh.xin
   port: 443
@@ -82,20 +103,20 @@ proxies:
   udp: true
   sni: docs.microsoft.com
   skip-cert-verify: true
-- name: 墨西哥|62|3.7|11  # cleanip 62 C · 3.7 MB/s
+- name: 墨西哥|62|3.7|14  # cleanip 62 C · 3.7 MB/s
   type: socks5
   server: 94.194.165.32
   port: 62000
   udp: true
   username: QyVdo5ks
   password: lcFa8dTH
-- name: 芬兰|65|3.7|12  # cleanip 65 C · 3.7 MB/s
+- name: 芬兰|65|3.7|15  # cleanip 65 C · 3.7 MB/s
   type: ss
   server: static.28.210.29.2.clients.your-server.de
   port: 25565
   cipher: chacha20-ietf-poly1305
   password: C8ZJ7R4p_HHJ32cst7ilT-0Zi2F22hAc
-- name: 香港|92|3.4|13  # cleanip 92 A+ · 3.4 MB/s
+- name: 香港|92|3.4|16  # cleanip 92 A+ · 3.4 MB/s
   type: http
   server: 38.76.140.254
   port: 8443
@@ -103,7 +124,7 @@ proxies:
   skip-cert-verify: true
   udp: true
 
-- name: 新加坡|68|3.2|14  # cleanip 68 B · 3.2 MB/s
+- name: 新加坡|68|3.2|17  # cleanip 68 B · 3.2 MB/s
   type: ss
   server: 68.183.227.4
   port: 8080
@@ -119,12 +140,15 @@ proxy-groups:
   - 美国|69|28.2|04
   - 美国|69|27.0|05
   - 美国|69|21.2|06
-  - 美国|65|6.6|07
-  - 香港|62|4.5|08
-  - 日本|63|4.0|09
-  - 台湾|67|3.9|10
-  - 墨西哥|62|3.7|11
-  - 芬兰|65|3.7|12
-  - 香港|92|3.4|13
-  - 新加坡|68|3.2|14
+  - 越南|94|11.1|07
+  - 香港|95|7.4|08
+  - 美国|65|6.6|09
+  - 印度尼西亚|88|5.0|10
+  - 香港|62|4.5|11
+  - 日本|63|4.0|12
+  - 台湾|67|3.9|13
+  - 墨西哥|62|3.7|14
+  - 芬兰|65|3.7|15
+  - 香港|92|3.4|16
+  - 新加坡|68|3.2|17
 
