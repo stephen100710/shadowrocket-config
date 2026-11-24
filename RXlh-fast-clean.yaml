@@ -1,14 +1,16 @@
 # RXlh-fast-clean.yaml - 干净节点订阅 (Clash 格式,小火箭可直接订阅)
 # 筛选标准:走节点能打开 https://www.google.com/search?q=q,且下载速度 > 3 MB/s;cleanip.io 评分只测来命名,不再过滤
 # 评分测试 2026-11-23 21:34/21:57;速度测试 2026-11-23 22:50,每节点 5 秒上限
-# 共 27 个节点(原 21 个 + 2026-11-24 18:34 新订阅 app.sublink.works/x/0nc2pOb 新增 6 个);美国|69|33.9|02、美国|69|33.6|03、美国|69|28.2|05、美国|69|27.0|06、美国|69|21.2|07 五个节点出口是同一个 IP (2606:4700:3030::,Cloudflare CDN)
+# 共 37 个节点(原 41 个 − 2026-11-24 20:04 推前 Google 搜索连通复测删掉 4 个);美国|69|33.9|02、美国|69|33.6|03、美国|69|28.2|05、美国|69|27.0|06、美国|69|21.2|07 五个节点出口是同一个 IP (2606:4700:3030::,Cloudflare CDN)
 # 2026-11-23 23:30 新订阅 MIJQvT8 共 85 个节点,2 个三项全过;日本与已有日本 01 同节点(103.248.150.50:42000)重复,未重复加
 # 2026-11-24 14:16 GitHub 订阅 zhuhaiuk/free-nodes 共 33 个节点,4 个三项全过;US - zhuhai.uk 05 (172.64.69.89:443)与已有美国节点重复,未重复加
-# 节点命名:地区|评分|速度|编号;地区为 cleanip 实测出口国家;编号按速度从高到低 01-27
-# 注意:原名英国 05 实测出口是墨西哥,已按实测命名为墨西哥|62|3.7|22
+# 节点命名:地区|评分|速度|编号;地区为 cleanip 实测出口国家;编号按速度从高到低 01-37
+# 注意:原名英国 05 实测出口是墨西哥,已按实测命名为墨西哥|62|3.7|28
 # 2026-11-24 14:41 按新门槛(连通+速度,不再筛 60 分)把上次测试里评分不够但达标的 13 个节点加进来
 # 2026-11-24 14:53 推前用 Google 搜索链接复测 30 个节点,21 个通、9 个不通(Google 返回 429 或 TLS 报错,不是节点死了,之前 delay 测试都通);删掉:香港|95|7.4|08、香港|62|4.5|16、俄罗斯|20|4.4|17、俄罗斯|20|4.3|18、俄罗斯|20|4.2|19、日本|63|4.0|21、芬兰|65|3.7|24、俄罗斯|20|3.3|27、新加坡|68|3.2|29
 # 2026-11-24 18:34 新订阅 app.sublink.works/x/0nc2pOb 共 37 个节点,连通 8、速度 3MB/s 以上 6、两关都过 6 个,全是新节点;4 个名义西班牙节点实测出口是意大利(80.174.118.x)、名义以色列节点实测出口是泰国,已按实测命名;推之前按新 skill 用 Google 搜索链接复测全部节点连通性
+# 2026-11-24 19:46 新订阅 zhuhai.uk/subs/TG-@dns68 共 112 个节点,连通 42、速度 3MB/s 以上 22、两关都过 22 个;6 个是重复(202.50.253.90/.99/.63、新加坡 vmess),订阅里 202.50.253.27 和 202.50.253.45 各出现两次、只加一次;新加 14 个;名义德国 vmess 节点实测出口是美国、名义西班牙/意大利 ss 节点实测出口都是意大利(80.174.118.x),已按实测命名;推之前按新 skill 用 Google 搜索链接复测全部节点连通性
+# 2026-11-24 20:04 推前用 Google 搜索链接复测 41 个节点,37 个通、4 个不通(3 个 Google 返回 429、1 个 TLS 报错);删掉:意大利|17|4.8|18、意大利|16|4.7|21、美国|68|3.9|29、意大利|16|3.2|39
 proxies:
 - name: 新加坡|68|66.2|01  # cleanip 68 B · 66.2 MB/s
   type: vmess
@@ -69,14 +71,30 @@ proxies:
   skip-cert-verify: true
   udp: true
 
-- name: 越南|94|11.1|08  # cleanip 94 A+ · 11.1 MB/s
+- name: 日本|62|12.4|08  # cleanip 62 C · 12.4 MB/s
+  type: hysteria2
+  server: 64.204.49.143
+  port: 443
+  password: 5dc783605a6829f831a21d86bb913c7a
+  sni: www.bing.com
+  skip-cert-verify: true
+
+- name: 香港|96|12.1|09  # cleanip 96 A+ · 12.1 MB/s
+  type: anytls
+  server: 5641sdds.df6h451rh.xin
+  port: 443
+  password: 0324fbc29561
+  sni: images.ctfassets.net
+  skip-cert-verify: true
+
+- name: 越南|94|11.1|10  # cleanip 94 A+ · 11.1 MB/s
   type: socks5
   server: 221.133.22.195
   port: 62000
   username: KUs4xRXd
   password: 480w0Yy4
 
-- name: 泰国|62|7.9|09  # cleanip 62 C · 7.9 MB/s
+- name: 泰国|62|7.9|11  # cleanip 62 C · 7.9 MB/s
   type: socks5
   server: 109.66.136.35
   port: 62000
@@ -84,7 +102,7 @@ proxies:
   username: r3ZzP8WW
   password: zdnivBaI
 
-- name: 美国|65|6.6|10  # cleanip 65 C · 6.6 MB/s
+- name: 美国|65|6.6|12  # cleanip 65 C · 6.6 MB/s
   type: socks5
   server: 66.253.2.69
   port: 62000
@@ -92,7 +110,7 @@ proxies:
   username: u_rb1dba2
   password: l1tlrdx52v
 
-- name: 美国|20|5.4|11  # cleanip 20 F · 5.4 MB/s
+- name: 美国|20|5.4|13  # cleanip 20 F · 5.4 MB/s
   type: http
   server: 138.199.35.199
   port: 9002
@@ -101,7 +119,7 @@ proxies:
   tls: true
   skip-cert-verify: true
 
-- name: 美国|12|5.1|12  # cleanip 12 F · 5.1 MB/s
+- name: 美国|12|5.1|14  # cleanip 12 F · 5.1 MB/s
   type: http
   server: 138.199.35.204
   port: 9002
@@ -109,14 +127,14 @@ proxies:
   sni: 138.199.35.204
   skip-cert-verify: true
 
-- name: 印度尼西亚|88|5.0|13  # cleanip 88 A · 5.0 MB/s
+- name: 印度尼西亚|88|5.0|15  # cleanip 88 A · 5.0 MB/s
   type: socks5
   server: 203.84.138.59
   port: 62000
   username: 9tcjLp2W
   password: RRWtX6XP
 
-- name: 美国|16|5.0|14  # cleanip 16 F · 5.0 MB/s
+- name: 美国|16|5.0|16  # cleanip 16 F · 5.0 MB/s
   type: http
   server: 138.199.35.195
   port: 9002
@@ -126,7 +144,7 @@ proxies:
   sni: 138.199.35.195
   skip-cert-verify: true
 
-- name: 意大利|20|4.9|15  # cleanip 20 F · 4.9 MB/s
+- name: 意大利|20|4.9|17  # cleanip 20 F · 4.9 MB/s
   type: ss
   server: 202.50.253.99
   port: 19999
@@ -134,7 +152,7 @@ proxies:
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   udp: true
 
-- name: 美国|16|4.8|16  # cleanip 16 F · 4.8 MB/s
+- name: 美国|16|4.8|18  # cleanip 16 F · 4.8 MB/s
   type: http
   server: 138.199.35.214
   port: 9002
@@ -144,15 +162,31 @@ proxies:
   sni: 138.199.35.214
   skip-cert-verify: true
 
-- name: 意大利|16|4.7|17  # cleanip 16 F · 4.7 MB/s
+- name: 意大利|20|4.7|19  # cleanip 20 F · 4.7 MB/s
   type: ss
-  server: 202.50.253.63
+  server: 202.50.253.27
   port: 19999
   cipher: aes-256-gcm
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   udp: true
 
-- name: 意大利|12|4.6|18  # cleanip 12 F · 4.6 MB/s
+- name: 意大利|18|4.7|20  # cleanip 18 F · 4.7 MB/s
+  type: ss
+  server: 202.50.253.36
+  port: 19999
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  udp: true
+
+- name: 意大利|20|4.7|21  # cleanip 20 F · 4.7 MB/s
+  type: ss
+  server: 202.50.253.18
+  port: 19999
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  udp: true
+
+- name: 意大利|12|4.6|22  # cleanip 12 F · 4.6 MB/s
   type: ss
   server: 202.50.253.90
   port: 19999
@@ -160,7 +194,7 @@ proxies:
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   udp: true
 
-- name: 美国|16|4.5|19  # cleanip 16 F · 4.5 MB/s
+- name: 美国|16|4.5|23  # cleanip 16 F · 4.5 MB/s
   type: http
   server: 138.199.35.205
   port: 9002
@@ -170,7 +204,29 @@ proxies:
   sni: 138.199.35.205
   skip-cert-verify: true
 
-- name: 美国|20|4.0|20  # cleanip 20 F · 4.0 MB/s
+- name: 意大利|20|4.1|24  # cleanip 20 F · 4.1 MB/s
+  type: ss
+  server: 202.50.253.72
+  port: 19999
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  udp: true
+
+- name: 荷兰|20|4.1|25  # cleanip 20 F · 4.1 MB/s
+  type: vless
+  server: uk1-2.998998.best
+  port: 443
+  uuid: bfc876fe-ecbc-4c13-a969-4b757e9e76fb
+  udp: true
+  tls: true
+  servername: server13.9966338.xyz
+  network: ws
+  ws-opts:
+    path: /resiouhgggggggggg
+    headers:
+      Host: server13.9966338.xyz
+
+- name: 美国|20|4.0|26  # cleanip 20 F · 4.0 MB/s
   type: http
   server: 138.199.35.201
   port: 9002
@@ -180,7 +236,7 @@ proxies:
   sni: 138.199.35.201
   skip-cert-verify: true
 
-- name: 台湾|67|3.9|21  # cleanip 67 B · 3.9 MB/s
+- name: 台湾|67|3.9|27  # cleanip 67 B · 3.9 MB/s
   type: anytls
   server: rtifgjdr.df6h451rh.xin
   port: 443
@@ -189,7 +245,7 @@ proxies:
   sni: docs.microsoft.com
   skip-cert-verify: true
 
-- name: 墨西哥|62|3.7|22  # cleanip 62 C · 3.7 MB/s
+- name: 墨西哥|62|3.7|28  # cleanip 62 C · 3.7 MB/s
   type: socks5
   server: 94.194.165.32
   port: 62000
@@ -197,7 +253,39 @@ proxies:
   username: QyVdo5ks
   password: lcFa8dTH
 
-- name: 荷兰|20|3.4|23  # cleanip 20 F · 3.4 MB/s
+- name: 韩国|63|3.6|29  # cleanip 63 C · 3.6 MB/s
+  type: vmess
+  server: jp4.998998.best
+  port: 443
+  uuid: bfc876fe-ecbc-4c13-a969-4b757e9e76fb
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: true
+  servername: nat12.9966338.xyz
+  network: ws
+  ws-opts:
+    path: /vvvvvvvvv
+    headers:
+      Host: nat12.9966338.xyz
+
+- name: 香港|72|3.4|30  # cleanip 72 B · 3.4 MB/s
+  type: vmess
+  server: hk2.998998.best
+  port: 443
+  uuid: bfc876fe-ecbc-4c13-a969-4b757e9e76fb
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: true
+  servername: server15.9966338.xyz
+  network: ws
+  ws-opts:
+    path: /asivewritten
+    headers:
+      Host: server15.9966338.xyz
+
+- name: 荷兰|20|3.4|31  # cleanip 20 F · 3.4 MB/s
   type: http
   server: 51.159.225.197
   port: 19362
@@ -205,7 +293,7 @@ proxies:
   sni: 51.159.225.197
   skip-cert-verify: true
 
-- name: 香港|92|3.4|24  # cleanip 92 A+ · 3.4 MB/s
+- name: 香港|92|3.4|32  # cleanip 92 A+ · 3.4 MB/s
   type: http
   server: 38.76.140.254
   port: 8443
@@ -213,7 +301,23 @@ proxies:
   skip-cert-verify: true
   udp: true
 
-- name: 荷兰|20|3.2|25  # cleanip 20 F · 3.2 MB/s
+- name: 美国|68|3.3|33  # cleanip 68 B · 3.3 MB/s
+  type: vmess
+  server: US032012.westmgreen.com
+  port: 443
+  uuid: f378a25e-9d84-4c61-ab9d-dc40e5bca6a2
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: true
+  servername: US032012.westmgreen.com
+  network: ws
+  ws-opts:
+    path: /wes
+    headers:
+      Host: US032012.westmgreen.com
+
+- name: 荷兰|20|3.2|34  # cleanip 20 F · 3.2 MB/s
   type: http
   server: 51.159.225.196
   port: 23856
@@ -223,20 +327,36 @@ proxies:
   sni: 51.159.225.196
   skip-cert-verify: true
 
-- name: 意大利|16|3.2|26  # cleanip 16 F · 3.2 MB/s
+- name: 意大利|4|3.2|35  # cleanip 4 F · 3.2 MB/s
   type: ss
-  server: 202.50.253.81
+  server: 202.50.253.45
   port: 19999
   cipher: aes-256-gcm
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   udp: true
 
-- name: 韩国|20|3.1|27  # cleanip 20 F · 3.1 MB/s
+- name: 韩国|20|3.1|36  # cleanip 20 F · 3.1 MB/s
   type: http
   server: 152.69.230.221
   port: 443
   tls: true
   skip-cert-verify: true
+
+- name: 美国|71|3.0|37  # cleanip 71 B · 3.0 MB/s
+  type: vmess
+  server: mix2.998998.best
+  port: 443
+  uuid: bfc876fe-ecbc-4c13-a969-4b757e9e76fb
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: true
+  servername: server10.9966338.xyz
+  network: ws
+  ws-opts:
+    path: /rthiugoyretdsuigg
+    headers:
+      Host: server10.9966338.xyz
 proxy-groups:
 - name: Fast
   type: select
@@ -248,23 +368,33 @@ proxy-groups:
   - 美国|69|28.2|05
   - 美国|69|27.0|06
   - 美国|69|21.2|07
-  - 越南|94|11.1|08
-  - 泰国|62|7.9|09
-  - 美国|65|6.6|10
-  - 美国|20|5.4|11
-  - 美国|12|5.1|12
-  - 印度尼西亚|88|5.0|13
-  - 美国|16|5.0|14
-  - 意大利|20|4.9|15
-  - 美国|16|4.8|16
-  - 意大利|16|4.7|17
-  - 意大利|12|4.6|18
-  - 美国|16|4.5|19
-  - 美国|20|4.0|20
-  - 台湾|67|3.9|21
-  - 墨西哥|62|3.7|22
-  - 荷兰|20|3.4|23
-  - 香港|92|3.4|24
-  - 荷兰|20|3.2|25
-  - 意大利|16|3.2|26
-  - 韩国|20|3.1|27
+  - 日本|62|12.4|08
+  - 香港|96|12.1|09
+  - 越南|94|11.1|10
+  - 泰国|62|7.9|11
+  - 美国|65|6.6|12
+  - 美国|20|5.4|13
+  - 美国|12|5.1|14
+  - 印度尼西亚|88|5.0|15
+  - 美国|16|5.0|16
+  - 意大利|20|4.9|17
+  - 美国|16|4.8|18
+  - 意大利|20|4.7|19
+  - 意大利|18|4.7|20
+  - 意大利|20|4.7|21
+  - 意大利|12|4.6|22
+  - 美国|16|4.5|23
+  - 意大利|20|4.1|24
+  - 荷兰|20|4.1|25
+  - 美国|20|4.0|26
+  - 台湾|67|3.9|27
+  - 墨西哥|62|3.7|28
+  - 韩国|63|3.6|29
+  - 香港|72|3.4|30
+  - 荷兰|20|3.4|31
+  - 香港|92|3.4|32
+  - 美国|68|3.3|33
+  - 荷兰|20|3.2|34
+  - 意大利|4|3.2|35
+  - 韩国|20|3.1|36
+  - 美国|71|3.0|37
