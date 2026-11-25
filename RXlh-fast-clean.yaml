@@ -1,7 +1,7 @@
 # RXlh-fast-clean.yaml - 干净节点订阅 (Clash 格式,小火箭可直接订阅)
 # 筛选标准:走节点能打开 https://www.google.com/search?q=q,且下载速度 > 3 MB/s;cleanip.io 评分只测来命名,不再过滤
 # 评分测试 2026-11-23 21:34/21:57;速度测试 2026-11-23 22:50,每节点 5 秒上限
-# 共 30 个节点(62 个合并后 2026-11-25 18:27 推前 Google 搜索连通复测删掉 6 个，再按评分取前 30，cutoff 20 分);美国|69|33.9|05、美国|69|33.6|06、美国|69|28.2|09、美国|69|27.0|10、美国|69|21.2|14 五个节点出口是同一个 IP (2606:4700:3030::,Cloudflare CDN)
+# 共 30 个节点(38 个合并后推前复测删掉 6 个，再按评分取前 30 删掉 2 个，cutoff 17 分);美国|69|33.9|04、美国|69|33.6|05、美国|69|28.2|08、美国|69|27.0|09、美国|69|21.2|12 五个节点出口是同一个 IP (2606:4700:3030::,Cloudflare CDN)
 # 2026-11-23 23:30 新订阅 MIJQvT8 共 85 个节点,2 个三项全过;日本与已有日本 01 同节点(103.248.150.50:42000)重复,未重复加
 # 2026-11-24 14:16 GitHub 订阅 zhuhaiuk/free-nodes 共 33 个节点,4 个三项全过;US - zhuhai.uk 05 (172.64.69.89:443)与已有美国节点重复,未重复加
 # 节点命名:地区|评分|速度|编号;地区为 cleanip 实测出口国家;编号按速度从高到低 01-30
@@ -17,16 +17,11 @@
 # 2026-11-25 18:11 新订阅 chengaopan/AutoMergePublicNodes snippets/nodes.yml:101 个节点(ss 70、trojan 19、vmess 12)，连通 45、速度 3MB/s 以上 44、两关都过 32 个，全是 ss、全部新节点；评分普遍很低（31 个 F、只有 1 个 46 分 C），按新门槛（连通+速度）照样进；合并后 62 个节点
 # 2026-11-25 18:27 推前复测 62 个：56 通、6 不通（删掉 美国|69|8.1|22、加拿大|0|7.9|25、英国|19|7.8|26、法国|0|7.4|32、荷兰|0|7.4|33、日本|0|5.1|55）；再按评分取前 30（cutoff 20 分，评分相同快的优先），新进 3 个：英国|46|6.5、意大利|20|7.3、意大利|20|7.2
 # 2026-11-25 16:36 推前用 Google 搜索链接复测 86 个节点,70 个通、16 个不通(基本是 Google 429);再按新 skill 取评分前 30 个(评分相同快的优先,cutoff 20 分):删掉复测不通的 16 个(最快的 53.2 那个也在内)和评分不够的 40 个,最终 30 个节点
+# 2026-11-26 01:44 新订阅 app.sublink.works/x/wYI9eUh 共 134 个节点(vless 68、ss 43、trojan 10、socks 6、vmess 4、wireguard 2、anytls 1)，连通 29、速度 3MB/s 以上 14、两关都过 13 个;其中 5 个与已有节点重复(202.50.253.99/.90、109.66.136.35、rtifgjdr anytls)，13 个过关里 5 个是同服务器重复(202.50.253.27/.45/.63 各出现多次)，实际新加 8 个;名义美国的 06/07/08/10 实测出口是意大利(80.174.118.x)，名义香港 03 实测出口是日本(152.69.201.112)，已按实测命名
+# 2026-11-26 02:00 推前复测 38 个:30 通、5 不通、3 超时;第二遍复测 8 个不通/超时的,2 个恢复(美国|68|16.2|16、美国|42|10.7|20),6 个两次都不通删掉:美国|42|45.9|01、美国|21|23.1|12、美国|20|14.9|17、美国|20|8.9|21、美国|20|7.4|23、日本|36|4.1|34(新加 vless)
+# 2026-11-26 02:00 再按评分取前 30(cutoff 17 分,评分相同快的优先):删掉意大利|10|4.1|35、意大利|8|7.2|27(两个都是新加的);最终新进 5 个:意大利|20|7.3、意大利|18|7.2、意大利|17|7.0、意大利|18|6.3、日本|61|4.3
 proxies:
-- name: 美国|42|45.9|01  # cleanip 42 D · 45.9 MB/s
-  type: trojan
-  server: 216.152.155.54
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  udp: true
-  sni: learn.nextjobopportunityandclaimyouridealrole.com
-
-- name: 美国|20|42.5|02  # cleanip 20 F · 42.5 MB/s
+- name: 美国|20|42.5|01  # cleanip 20 F · 42.5 MB/s
   type: trojan
   server: 216.152.155.176
   port: 443
@@ -34,7 +29,7 @@ proxies:
   udp: true
   sni: blog.nextjobopportunityandclaimyouridealrole.com
 
-- name: 美国|20|41.5|03  # cleanip 20 F · 41.5 MB/s
+- name: 美国|20|41.5|02  # cleanip 20 F · 41.5 MB/s
   type: trojan
   server: 216.152.155.23
   port: 443
@@ -42,7 +37,7 @@ proxies:
   udp: true
   sni: courses.nextjobopportunityandclaimyouridealrole.com
 
-- name: 美国|32|35.0|04  # cleanip 32 D · 35.0 MB/s
+- name: 美国|32|35.0|03  # cleanip 32 D · 35.0 MB/s
   type: ss
   server: 216.106.178.169
   port: 19999
@@ -50,7 +45,7 @@ proxies:
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   udp: true
 
-- name: 美国|69|33.9|05  # cleanip 69 B · 33.9 MB/s
+- name: 美国|69|33.9|04  # cleanip 69 B · 33.9 MB/s
   type: http
   server: 172.64.69.89
   port: 443
@@ -58,7 +53,7 @@ proxies:
   skip-cert-verify: true
   udp: true
 
-- name: 美国|69|33.6|06  # cleanip 69 B · 33.6 MB/s
+- name: 美国|69|33.6|05  # cleanip 69 B · 33.6 MB/s
   type: http
   server: 172.64.69.89
   port: 443
@@ -66,7 +61,7 @@ proxies:
   skip-cert-verify: true
   udp: true
 
-- name: 美国|51|32.6|07  # cleanip 51 C · 32.6 MB/s
+- name: 美国|51|32.6|06  # cleanip 51 C · 32.6 MB/s
   type: vmess
   server: 38.128.66.249
   port: 1270
@@ -77,7 +72,7 @@ proxies:
   tls: true
   servername: xmfhlpy.com
 
-- name: 美国|60|30.0|08  # cleanip 60 C · 30.0 MB/s
+- name: 美国|60|30.0|07  # cleanip 60 C · 30.0 MB/s
   type: http
   server: 23.133.176.14
   port: 443
@@ -85,7 +80,7 @@ proxies:
   skip-cert-verify: true
   udp: true
 
-- name: 美国|69|28.2|09  # cleanip 69 B · 28.2 MB/s
+- name: 美国|69|28.2|08  # cleanip 69 B · 28.2 MB/s
   type: http
   server: 172.64.68.89
   port: 443
@@ -93,7 +88,7 @@ proxies:
   skip-cert-verify: true
   udp: true
 
-- name: 美国|69|27.0|10  # cleanip 69 B · 27.0 MB/s
+- name: 美国|69|27.0|09  # cleanip 69 B · 27.0 MB/s
   type: http
   server: 172.64.68.89
   port: 443
@@ -101,7 +96,7 @@ proxies:
   skip-cert-verify: true
   udp: true
 
-- name: 美国|57|26.6|11  # cleanip 57 C · 26.6 MB/s
+- name: 美国|57|26.6|10  # cleanip 57 C · 26.6 MB/s
   type: vmess
   server: 38.128.66.241
   port: 1270
@@ -112,15 +107,7 @@ proxies:
   tls: true
   servername: xmfhlpy.com
 
-- name: 美国|21|23.1|12  # cleanip 21 D · 23.1 MB/s
-  type: trojan
-  server: 170.101.101.19
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  udp: true
-  sni: learn.explorecreativejobsandenhanceyourcareerportfolio.com
-
-- name: 加拿大|20|22.2|13  # cleanip 20 F · 22.2 MB/s
+- name: 加拿大|20|22.2|11  # cleanip 20 F · 22.2 MB/s
   type: ss
   server: 134.195.198.163
   port: 443
@@ -128,7 +115,7 @@ proxies:
   password: PmCqK98WqhSC
   udp: true
 
-- name: 美国|69|21.2|14  # cleanip 69 B · 21.2 MB/s
+- name: 美国|69|21.2|12  # cleanip 69 B · 21.2 MB/s
   type: http
   server: 172.64.68.89
   port: 443
@@ -136,7 +123,7 @@ proxies:
   skip-cert-verify: true
   udp: true
 
-- name: 美国|54|16.5|15  # cleanip 54 C · 16.5 MB/s
+- name: 美国|54|16.5|13  # cleanip 54 C · 16.5 MB/s
   type: vmess
   server: 38.128.66.212
   port: 1270
@@ -147,7 +134,7 @@ proxies:
   tls: true
   servername: xmfhlpy.com
 
-- name: 美国|68|16.2|16  # cleanip 68 B · 16.2 MB/s
+- name: 美国|68|16.2|14  # cleanip 68 B · 16.2 MB/s
   type: trojan
   server: 66.163.122.26
   port: 443
@@ -155,15 +142,7 @@ proxies:
   udp: true
   sni: blog.searchnationwidecareerchangehelperandguidancetoday.com
 
-- name: 美国|20|14.9|17  # cleanip 20 F · 14.9 MB/s
-  type: trojan
-  server: 66.163.122.30
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  udp: true
-  sni: resources.searchnationwidecareerchangehelperandguidancetoday.com
-
-- name: 香港|96|12.1|18  # cleanip 96 A+ · 12.1 MB/s
+- name: 香港|96|12.1|15  # cleanip 96 A+ · 12.1 MB/s
   type: anytls
   server: 5641sdds.df6h451rh.xin
   port: 443
@@ -171,14 +150,14 @@ proxies:
   sni: images.ctfassets.net
   skip-cert-verify: true
 
-- name: 越南|94|11.1|19  # cleanip 94 A+ · 11.1 MB/s
+- name: 越南|94|11.1|16  # cleanip 94 A+ · 11.1 MB/s
   type: socks5
   server: 221.133.22.195
   port: 62000
   username: KUs4xRXd
   password: 480w0Yy4
 
-- name: 美国|42|10.7|20  # cleanip 42 D · 10.7 MB/s
+- name: 美国|42|10.7|17  # cleanip 42 D · 10.7 MB/s
   type: trojan
   server: 216.152.155.54
   port: 443
@@ -186,16 +165,7 @@ proxies:
   udp: true
   sni: learn.nextjobopportunityandclaimyouridealrole.com
 
-- name: 美国|20|8.9|21  # cleanip 20 F · 8.9 MB/s
-  type: vmess
-  server: 67.220.95.3
-  port: 18000
-  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
-  alterId: 0
-  cipher: auto
-  udp: true
-
-- name: 泰国|62|7.9|22  # cleanip 62 C · 7.9 MB/s
+- name: 泰国|62|7.9|18  # cleanip 62 C · 7.9 MB/s
   type: socks5
   server: 109.66.136.35
   port: 62000
@@ -203,42 +173,73 @@ proxies:
   username: r3ZzP8WW
   password: zdnivBaI
 
-- name: 美国|20|7.4|23  # cleanip 20 F · 7.4 MB/s
-  type: vmess
-  server: 67.220.95.3
-  port: 18000
-  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
-  alterId: 0
-  cipher: aes-128-gcm
-  udp: true
-
-- name: 意大利|20|7.3|24  # cleanip 20 F · 7.3 MB/s
+- name: 意大利|20|7.3|19  # cleanip 20 F · 7.3 MB/s
   cipher: aes-256-gcm
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   port: 19999
   server: 202.50.253.99
   type: ss
 
-- name: 意大利|20|7.2|25  # cleanip 20 F · 7.2 MB/s
+- name: 意大利|20|7.3|20  # cleanip 20 F · 7.3 MB/s
+  type: ss
+  server: 202.50.253.27
+  port: 19999
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  udp: true
+
+- name: 意大利|20|7.2|21  # cleanip 20 F · 7.2 MB/s
   cipher: aes-256-gcm
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   port: 19999
   server: 202.50.253.90
   type: ss
 
-- name: 英国|46|6.5|26  # cleanip 46 C · 6.5 MB/s
+- name: 意大利|18|7.2|22  # cleanip 18 F · 7.2 MB/s
+  type: ss
+  server: 202.50.253.63
+  port: 19999
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  udp: true
+
+- name: 意大利|17|7.0|23  # cleanip 17 F · 7.0 MB/s
+  type: ss
+  server: 202.50.253.54
+  port: 19999
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  udp: true
+
+- name: 英国|46|6.5|24  # cleanip 46 C · 6.5 MB/s
   cipher: aes-256-gcm
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   port: 19999
   server: 198.244.201.129
   type: ss
 
-- name: 印度尼西亚|88|5.0|27  # cleanip 88 A · 5.0 MB/s
+- name: 意大利|18|6.3|25  # cleanip 18 F · 6.3 MB/s
+  type: ss
+  server: 202.50.253.72
+  port: 19999
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  udp: true
+
+- name: 印度尼西亚|88|5.0|26  # cleanip 88 A · 5.0 MB/s
   type: socks5
   server: 203.84.138.59
   port: 62000
   username: 9tcjLp2W
   password: RRWtX6XP
+
+- name: 日本|61|4.3|27  # cleanip 61 C · 4.3 MB/s
+  type: socks5
+  server: 103.248.150.66
+  port: 42000
+  udp: true
+  username: paZFN3JA
+  password: EGJDy5Kg
 
 - name: 台湾|67|3.9|28  # cleanip 67 B · 3.9 MB/s
   type: anytls
@@ -268,33 +269,33 @@ proxy-groups:
 - name: Fast
   type: select
   proxies:
-  - 美国|42|45.9|01
-  - 美国|20|42.5|02
-  - 美国|20|41.5|03
-  - 美国|32|35.0|04
-  - 美国|69|33.9|05
-  - 美国|69|33.6|06
-  - 美国|51|32.6|07
-  - 美国|60|30.0|08
-  - 美国|69|28.2|09
-  - 美国|69|27.0|10
-  - 美国|57|26.6|11
-  - 美国|21|23.1|12
-  - 加拿大|20|22.2|13
-  - 美国|69|21.2|14
-  - 美国|54|16.5|15
-  - 美国|68|16.2|16
-  - 美国|20|14.9|17
-  - 香港|96|12.1|18
-  - 越南|94|11.1|19
-  - 美国|42|10.7|20
-  - 美国|20|8.9|21
-  - 泰国|62|7.9|22
-  - 美国|20|7.4|23
-  - 意大利|20|7.3|24
-  - 意大利|20|7.2|25
-  - 英国|46|6.5|26
-  - 印度尼西亚|88|5.0|27
+  - 美国|20|42.5|01
+  - 美国|20|41.5|02
+  - 美国|32|35.0|03
+  - 美国|69|33.9|04
+  - 美国|69|33.6|05
+  - 美国|51|32.6|06
+  - 美国|60|30.0|07
+  - 美国|69|28.2|08
+  - 美国|69|27.0|09
+  - 美国|57|26.6|10
+  - 加拿大|20|22.2|11
+  - 美国|69|21.2|12
+  - 美国|54|16.5|13
+  - 美国|68|16.2|14
+  - 香港|96|12.1|15
+  - 越南|94|11.1|16
+  - 美国|42|10.7|17
+  - 泰国|62|7.9|18
+  - 意大利|20|7.3|19
+  - 意大利|20|7.3|20
+  - 意大利|20|7.2|21
+  - 意大利|18|7.2|22
+  - 意大利|17|7.0|23
+  - 英国|46|6.5|24
+  - 意大利|18|6.3|25
+  - 印度尼西亚|88|5.0|26
+  - 日本|61|4.3|27
   - 台湾|67|3.9|28
   - 墨西哥|62|3.7|29
   - 香港|92|3.4|30
