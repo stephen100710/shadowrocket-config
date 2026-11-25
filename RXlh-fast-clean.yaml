@@ -1,7 +1,7 @@
 # RXlh-fast-clean.yaml - 干净节点订阅 (Clash 格式,小火箭可直接订阅)
 # 筛选标准:走节点能打开 https://www.google.com/search?q=q,且下载速度 > 3 MB/s;cleanip.io 评分只测来命名,不再过滤
 # 评分测试 2026-11-23 21:34/21:57;速度测试 2026-11-23 22:50,每节点 5 秒上限
-# 共 30 个节点(原 86 个 − 2026-11-25 16:36 推前 Google 搜索连通复测删掉 16 个 − 按评分取前 30 删掉 40 个);美国|69|33.9|05、美国|69|33.6|06、美国|69|28.2|09、美国|69|27.0|10、美国|69|21.2|14 五个节点出口是同一个 IP (2606:4700:3030::,Cloudflare CDN)
+# 共 30 个节点(62 个合并后 2026-11-25 18:27 推前 Google 搜索连通复测删掉 6 个，再按评分取前 30，cutoff 20 分);美国|69|33.9|05、美国|69|33.6|06、美国|69|28.2|09、美国|69|27.0|10、美国|69|21.2|14 五个节点出口是同一个 IP (2606:4700:3030::,Cloudflare CDN)
 # 2026-11-23 23:30 新订阅 MIJQvT8 共 85 个节点,2 个三项全过;日本与已有日本 01 同节点(103.248.150.50:42000)重复,未重复加
 # 2026-11-24 14:16 GitHub 订阅 zhuhaiuk/free-nodes 共 33 个节点,4 个三项全过;US - zhuhai.uk 05 (172.64.69.89:443)与已有美国节点重复,未重复加
 # 节点命名:地区|评分|速度|编号;地区为 cleanip 实测出口国家;编号按速度从高到低 01-30
@@ -14,6 +14,8 @@
 # 2026-11-25 15:02 新订阅 Pawdroid/Free-servers 共 11 个节点,连通 4、速度 3MB/s 以上 3、两关都过 3 个;其中 2 个是重复(202.50.253.72/.18 已在列表里),新加 1 个:瑞典|18|3.8(名义罗马尼亚,实测出口是瑞典 31.76.3.6);推之前按新 skill 用 Google 搜索链接复测全部节点连通性
 # 2026-11-25 15:12 推前用 Google 搜索链接复测 38 个节点,31 个通、7 个不通(基本是 SSL 报错);7 个单独再测一次还是全不通,确认删掉:新加坡|68|66.2|01、日本|62|12.4|08、荷兰|20|4.1|25、韩国|63|3.6|30、香港|72|3.4|31、美国|68|3.3|34、美国|71|3.0|38;5 个 vmess 节点这次全挂,列表里已没有 vmess 和 hysteria2 节点
 # 2026-11-25 16:11 新订阅 0xRadikal/Free-v2ray-Configs top100.txt 共 100 个节点(ss 36、vmess 30、vless 18、trojan 16),连通 61、速度 3MB/s 以上 77、两关都过 55 个,全是新节点(0 个重复);最快 53.2MB/s
+# 2026-11-25 18:11 新订阅 chengaopan/AutoMergePublicNodes snippets/nodes.yml:101 个节点(ss 70、trojan 19、vmess 12)，连通 45、速度 3MB/s 以上 44、两关都过 32 个，全是 ss、全部新节点；评分普遍很低（31 个 F、只有 1 个 46 分 C），按新门槛（连通+速度）照样进；合并后 62 个节点
+# 2026-11-25 18:27 推前复测 62 个：56 通、6 不通（删掉 美国|69|8.1|22、加拿大|0|7.9|25、英国|19|7.8|26、法国|0|7.4|32、荷兰|0|7.4|33、日本|0|5.1|55）；再按评分取前 30（cutoff 20 分，评分相同快的优先），新进 3 个：英国|46|6.5、意大利|20|7.3、意大利|20|7.2
 # 2026-11-25 16:36 推前用 Google 搜索链接复测 86 个节点,70 个通、16 个不通(基本是 Google 429);再按新 skill 取评分前 30 个(评分相同快的优先,cutoff 20 分):删掉复测不通的 16 个(最快的 53.2 那个也在内)和评分不够的 40 个,最终 30 个节点
 proxies:
 - name: 美国|42|45.9|01  # cleanip 42 D · 45.9 MB/s
@@ -193,21 +195,7 @@ proxies:
   cipher: auto
   udp: true
 
-- name: 美国|69|8.1|22  # cleanip 69 B · 8.1 MB/s
-  type: vless
-  server: 195.211.98.43
-  port: 443
-  uuid: 1b4b11d5-4c2d-4533-9a55-636757cdee94
-  udp: true
-  flow: xtls-rprx-vision
-  tls: true
-  reality-opts:
-    public-key: xPnpkXu5qfwIArlHKvJsqKJnGdGbJK1tT2GzWMyLohA
-    short-id: 9c56fddf237e8eaf
-  servername: www.cloudflare.com
-  client-fingerprint: chrome
-
-- name: 泰国|62|7.9|23  # cleanip 62 C · 7.9 MB/s
+- name: 泰国|62|7.9|22  # cleanip 62 C · 7.9 MB/s
   type: socks5
   server: 109.66.136.35
   port: 62000
@@ -215,7 +203,7 @@ proxies:
   username: r3ZzP8WW
   password: zdnivBaI
 
-- name: 美国|20|7.4|24  # cleanip 20 F · 7.4 MB/s
+- name: 美国|20|7.4|23  # cleanip 20 F · 7.4 MB/s
   type: vmess
   server: 67.220.95.3
   port: 18000
@@ -224,23 +212,26 @@ proxies:
   cipher: aes-128-gcm
   udp: true
 
-- name: 美国|20|6.6|25  # cleanip 20 F · 6.6 MB/s
-  type: vmess
-  server: 67.220.95.3
-  port: 18000
-  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
-  alterId: 0
-  cipher: aes-128-gcm
-  udp: true
+- name: 意大利|20|7.3|24  # cleanip 20 F · 7.3 MB/s
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  port: 19999
+  server: 202.50.253.99
+  type: ss
 
-- name: 美国|20|5.4|26  # cleanip 20 F · 5.4 MB/s
-  type: http
-  server: 138.199.35.199
-  port: 9002
-  username: 'null'
-  password: 'null'
-  tls: true
-  skip-cert-verify: true
+- name: 意大利|20|7.2|25  # cleanip 20 F · 7.2 MB/s
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  port: 19999
+  server: 202.50.253.90
+  type: ss
+
+- name: 英国|46|6.5|26  # cleanip 46 C · 6.5 MB/s
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  port: 19999
+  server: 198.244.201.129
+  type: ss
 
 - name: 印度尼西亚|88|5.0|27  # cleanip 88 A · 5.0 MB/s
   type: socks5
@@ -298,11 +289,11 @@ proxy-groups:
   - 越南|94|11.1|19
   - 美国|42|10.7|20
   - 美国|20|8.9|21
-  - 美国|69|8.1|22
-  - 泰国|62|7.9|23
-  - 美国|20|7.4|24
-  - 美国|20|6.6|25
-  - 美国|20|5.4|26
+  - 泰国|62|7.9|22
+  - 美国|20|7.4|23
+  - 意大利|20|7.3|24
+  - 意大利|20|7.2|25
+  - 英国|46|6.5|26
   - 印度尼西亚|88|5.0|27
   - 台湾|67|3.9|28
   - 墨西哥|62|3.7|29
