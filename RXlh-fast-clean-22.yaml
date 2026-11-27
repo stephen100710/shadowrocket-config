@@ -1,0 +1,232 @@
+# RXlh-fast-clean.yaml - 干净节点订阅 (Clash 格式,小火箭可直接订阅)
+# 筛选标准:走节点能打开 https://www.google.com/search?q=q,且下载速度 > 3 MB/s;cleanip.io 评分只测来命名,不再过滤
+# 评分测试 2026-11-23 21:34/21:57;速度测试 2026-11-23 22:50,每节点 5 秒上限
+# 共 30 个节点(38 个合并后推前复测删掉 2 个，再按评分取前 30 删掉 6 个，cutoff 20 分);美国|69|33.9|05、美国|69|33.6|06、美国|69|28.2|09、美国|69|27.0|10、美国|69|21.2|12 五个节点出口是同一个 IP (2606:4700:3030::,Cloudflare CDN)
+# 2026-11-23 23:30 新订阅 MIJQvT8 共 85 个节点,2 个三项全过;日本与已有日本 01 同节点(103.248.150.50:42000)重复,未重复加
+# 2026-11-24 14:16 GitHub 订阅 zhuhaiuk/free-nodes 共 33 个节点,4 个三项全过;US - zhuhai.uk 05 (172.64.69.89:443)与已有美国节点重复,未重复加
+# 节点命名:地区|评分|速度|编号;地区为 cleanip 实测出口国家;编号按速度从高到低 01-30
+# 注意:原名英国 05 实测出口是墨西哥,已按实测命名为墨西哥|62|3.7|29
+# 2026-11-24 14:41 按新门槛(连通+速度,不再筛 60 分)把上次测试里评分不够但达标的 13 个节点加进来
+# 2026-11-24 14:53 推前用 Google 搜索链接复测 30 个节点,21 个通、9 个不通(Google 返回 429 或 TLS 报错,不是节点死了,之前 delay 测试都通);删掉:香港|95|7.4|08、香港|62|4.5|16、俄罗斯|20|4.4|17、俄罗斯|20|4.3|18、俄罗斯|20|4.2|19、日本|63|4.0|21、芬兰|65|3.7|24、俄罗斯|20|3.3|27、新加坡|68|3.2|29
+# 2026-11-24 18:34 新订阅 app.sublink.works/x/0nc2pOb 共 37 个节点,连通 8、速度 3MB/s 以上 6、两关都过 6 个,全是新节点;4 个名义西班牙节点实测出口是意大利(80.174.118.x)、名义以色列节点实测出口是泰国,已按实测命名;推之前按新 skill 用 Google 搜索链接复测全部节点连通性
+# 2026-11-24 19:46 新订阅 zhuhai.uk/subs/TG-@dns68 共 112 个节点,连通 42、速度 3MB/s 以上 22、两关都过 22 个;6 个是重复(202.50.253.90/.99/.63、新加坡 vmess),订阅里 202.50.253.27 和 202.50.253.45 各出现两次、只加一次;新加 14 个;名义德国 vmess 节点实测出口是美国、名义西班牙/意大利 ss 节点实测出口都是意大利(80.174.118.x),已按实测命名;推之前按新 skill 用 Google 搜索链接复测全部节点连通性
+# 2026-11-24 20:04 推前用 Google 搜索链接复测 41 个节点,37 个通、4 个不通(3 个 Google 返回 429、1 个 TLS 报错);删掉:意大利|17|4.8|18、意大利|16|4.7|21、美国|68|3.9|29、意大利|16|3.2|39
+# 2026-11-25 15:02 新订阅 Pawdroid/Free-servers 共 11 个节点,连通 4、速度 3MB/s 以上 3、两关都过 3 个;其中 2 个是重复(202.50.253.72/.18 已在列表里),新加 1 个:瑞典|18|3.8(名义罗马尼亚,实测出口是瑞典 31.76.3.6);推之前按新 skill 用 Google 搜索链接复测全部节点连通性
+# 2026-11-25 15:12 推前用 Google 搜索链接复测 38 个节点,31 个通、7 个不通(基本是 SSL 报错);7 个单独再测一次还是全不通,确认删掉:新加坡|68|66.2|01、日本|62|12.4|08、荷兰|20|4.1|25、韩国|63|3.6|30、香港|72|3.4|31、美国|68|3.3|34、美国|71|3.0|38;5 个 vmess 节点这次全挂,列表里已没有 vmess 和 hysteria2 节点
+# 2026-11-25 16:11 新订阅 0xRadikal/Free-v2ray-Configs top100.txt 共 100 个节点(ss 36、vmess 30、vless 18、trojan 16),连通 61、速度 3MB/s 以上 77、两关都过 55 个,全是新节点(0 个重复);最快 53.2MB/s
+# 2026-11-25 18:11 新订阅 chengaopan/AutoMergePublicNodes snippets/nodes.yml:101 个节点(ss 70、trojan 19、vmess 12)，连通 45、速度 3MB/s 以上 44、两关都过 32 个，全是 ss、全部新节点；评分普遍很低（31 个 F、只有 1 个 46 分 C），按新门槛（连通+速度）照样进；合并后 62 个节点
+# 2026-11-25 18:27 推前复测 62 个：56 通、6 不通（删掉 美国|69|8.1|22、加拿大|0|7.9|25、英国|19|7.8|26、法国|0|7.4|32、荷兰|0|7.4|33、日本|0|5.1|55）；再按评分取前 30（cutoff 20 分，评分相同快的优先），新进 3 个：英国|46|6.5、意大利|20|7.3、意大利|20|7.2
+# 2026-11-25 16:36 推前用 Google 搜索链接复测 86 个节点,70 个通、16 个不通(基本是 Google 429);再按新 skill 取评分前 30 个(评分相同快的优先,cutoff 20 分):删掉复测不通的 16 个(最快的 53.2 那个也在内)和评分不够的 40 个,最终 30 个节点
+# 2026-11-26 01:44 新订阅 app.sublink.works/x/wYI9eUh 共 134 个节点(vless 68、ss 43、trojan 10、socks 6、vmess 4、wireguard 2、anytls 1)，连通 29、速度 3MB/s 以上 14、两关都过 13 个;其中 5 个与已有节点重复(202.50.253.99/.90、109.66.136.35、rtifgjdr anytls)，13 个过关里 5 个是同服务器重复(202.50.253.27/.45/.63 各出现多次)，实际新加 8 个;名义美国的 06/07/08/10 实测出口是意大利(80.174.118.x)，名义香港 03 实测出口是日本(152.69.201.112)，已按实测命名
+# 2026-11-26 02:00 推前复测 38 个:30 通、5 不通、3 超时;第二遍复测 8 个不通/超时的,2 个恢复(美国|68|16.2|16、美国|42|10.7|20),6 个两次都不通删掉:美国|42|45.9|01、美国|21|23.1|12、美国|20|14.9|17、美国|20|8.9|21、美国|20|7.4|23、日本|36|4.1|34(新加 vless)
+# 2026-11-26 02:00 再按评分取前 30(cutoff 17 分,评分相同快的优先):删掉意大利|10|4.1|35、意大利|8|7.2|27(两个都是新加的);最终新进 5 个:意大利|20|7.3、意大利|18|7.2、意大利|17|7.0、意大利|18|6.3、日本|61|4.3
+# 2026-11-26 14:02 新订阅 app.sublink.works/x/ZmuuFPi 共 38 个节点(socks 12、vless 11、ss 6、vmess 4、wireguard 3、anytls 1、hysteria2 1)，连通 20、速度 3MB/s 以上 8、两关都过 8 个;其中 6 个与已有节点重复(rtifgjdr anytls、202.50.253.63/.99/.90/.72、109.66.136.35)，32 个新节点分两批测(14+17)，新加 8 个;名义希腊 01 实测出口是英国(46.20.105.110)，名义希腊 02/西班牙 06 实测出口是意大利(80.174.118.x)，已按实测命名;本轮 4 个 CSV 在 Colab 下载未捕获，以逐行读盘为准
+# 2026-11-26 15:46 推前复测 38 个:36 通、2 不通、0 超时;第二遍复测 2 个不通的,都还是不通删掉:加拿大|20|22.2|12(两次都是 Google 429)、德国|75|4.1|33(新加 vless,第一次 SSL 报错、第二次超时)
+# 2026-11-26 15:46 再按评分取前 30(cutoff 20 分,评分相同快的优先):删掉意大利|18|7.2|24、意大利|18|6.3|27、意大利|17|7.0|25、英国|13|4.9|31(新加 hysteria2)、意大利|10|5.6|28(新加)、意大利|4|5.6|29(新加);最终新进 4 个:美国|20|34.1、美国|20|17.9、日本|33|3.3、日本|63|3.3
+# 2026-11-26 18:35 核对纠错:复测任务印出的速度表曾把美国 04 印成 1.000(cachefly),与首轮汇报 17.850 不符;第三次重印同一文件仍是 17.850,且文件 751 字节与 17.850 版+回车换行完全吻合、与 1.000 版不符,以 17.850 为准,美国 04 保留
+# 2026-11-27 Colab 复测 (mihomo v1.19.34, 580.96s, 登录 stephen100710@gmail.com):新订阅 98 个节点,连通 17、速度>3MB/s 5、两关都过 5;去重后新加 1 个(见下),其余 2 个两关都过的节点因无有效 cleanip 评分暂缓(见下)
+# 去重: N33 与 N45 是同一节点(ss 202.50.253.45:19999,同密码),只留更快的 N33; N34 与干净订阅 墨西哥|62|3.7|27 同服务器端口账号,不是新节点,跳过
+# 暂缓未并入: N21-hysteria2 7.9MB/s (Cachefly) - Colab 表里 exit_ip 与 country 为空,无有效 cleanip 评分,无法按地区|评分|速度命名,不编造; N33-ss 7.7MB/s (Cachefly,出口 80.174.118.38 意大利) - cleanip_score 为空,无有效评分,暂缓;两者均已通过连通+速度两关,补测 cleanip 后可并入
+# cleanip 评分说明: Colab 表里 cleanip_score 列的三位数是已知错误正则(读到嵌入 JSON 的 score 字段),不是真评分,已弃用; N14 的 55 是 Box 轮次从 cleanip.io 渲染页实测,出口 IP 51.194.118.38 与 Colab 实测出口一致,故采用
+# 复测 30 个干净节点:保留 20、删除 10(两次都不通): 美国|32|35.0|03 (ss 302 两次)、美国|20|34.1|04 (vmess 000 两次)、美国|20|17.9|13 (vmess 000 两次)、泰国|62|7.9|19 (socks5 302 两次)、意大利|20|7.3|20、意大利|20|7.3|21、意大利|20|7.2|22 (ss 302 两次)、英国|46|6.5|23 (ss 302 两次)、日本|33|3.3|29、日本|63|3.3|30 (vmess 000 两次); 302 为地区重定向,按规则不算连通
+# 最终 21 个节点(20 保留 + 1 新加荷兰|55|8.3),不足 30 全留,按速度重排编号;最快 美国|20|42.5|01;速度为 Colab 出口实测,非手机实测; Box 轮次文件 RXlh-fast-clean-new.yaml 已作废,勿推
+# 2026-11-27 12:41-12:55 Colab 补测 cleanip (mihomo 单节点配置,渲染 cleanip.io 页面;嵌入式 JSON 里的 score 字段为错误读数,未用)
+# N33-ss 202.50.253.45:19999, Colab 速度 7.7MB/s Cachefly,出口 80.174.118.38 意大利米兰(AS30088 GTHost),cleanip 总分 4/100 F 级(报告 2026/11/20 09:24),按实测命名 意大利|4|7.7|17 并入;原 Google 连通为 200,未报告复测失败
+# N21-hysteria2 128.254.186.190:13337, Colab 速度 7.9MB/s,出口现测 46.20.105.110,cleanip 总分 8/100 F 级(报告 2026/11/25 18:54),但地区有歧义(Cloudflare trace 称 DE,cleanip 称 UK 英格兰伦敦 AS219284,注册与位置不符;另一 IP 46.20.105.30 的 71 分属该 IP,不得挪用);且 12:48-12:50 复测 Google 连续 3 次 302,原轮次为 200,按只认 200 的规则本次不算连通,故 N21 不并入
+# 用户说直接推 23 个,但按上述实测 23 个不成立:22 个是本轮干净可推数(N21 排除,N45 与 N33 同节点已去重,N34 与干净订阅墨西哥节点同账号已跳过)
+# 最终 22 个节点(20 保留 + 荷兰|55|8.3 + 意大利|4|7.7),不足 30 全留,按速度重排编号;最快 美国|20|42.5|01;速度为 Colab 出口实测,非手机实测;未推 GitHub,待批准
+proxies:
+- name: 美国|20|42.5|01
+  type: trojan
+  server: 216.152.155.176
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  udp: true
+  sni: blog.nextjobopportunityandclaimyouridealrole.com
+- name: 美国|20|41.5|02
+  type: trojan
+  server: 216.152.155.23
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  udp: true
+  sni: courses.nextjobopportunityandclaimyouridealrole.com
+- name: 美国|69|33.9|03
+  type: http
+  server: 172.64.69.89
+  port: 443
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 美国|69|33.6|04
+  type: http
+  server: 172.64.69.89
+  port: 443
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 美国|51|32.6|05
+  type: vmess
+  server: 38.128.66.249
+  port: 1270
+  uuid: 5c040f1d-45db-43bd-8d46-e4950e433735
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: true
+  servername: xmfhlpy.com
+- name: 美国|60|30.0|06
+  type: http
+  server: 23.133.176.14
+  port: 443
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 美国|69|28.2|07
+  type: http
+  server: 172.64.68.89
+  port: 443
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 美国|69|27.0|08
+  type: http
+  server: 172.64.68.89
+  port: 443
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 美国|57|26.6|09
+  type: vmess
+  server: 38.128.66.241
+  port: 1270
+  uuid: 5c040f1d-45db-43bd-8d46-e4950e433735
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: true
+  servername: xmfhlpy.com
+- name: 美国|69|21.2|10
+  type: http
+  server: 172.64.68.89
+  port: 443
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 美国|54|16.5|11
+  type: vmess
+  server: 38.128.66.212
+  port: 1270
+  uuid: 5c040f1d-45db-43bd-8d46-e4950e433735
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: true
+  servername: xmfhlpy.com
+- name: 美国|68|16.2|12
+  type: trojan
+  server: 66.163.122.26
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  udp: true
+  sni: blog.searchnationwidecareerchangehelperandguidancetoday.com
+- name: 香港|96|12.1|13
+  type: anytls
+  server: 5641sdds.df6h451rh.xin
+  port: 443
+  password: 0324fbc29561
+  sni: images.ctfassets.net
+  skip-cert-verify: true
+- name: 越南|94|11.1|14
+  type: socks5
+  server: 221.133.22.195
+  port: 62000
+  username: KUs4xRXd
+  password: 480w0Yy4
+- name: 美国|42|10.7|15
+  type: trojan
+  server: 216.152.155.54
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  udp: true
+  sni: learn.nextjobopportunityandclaimyouridealrole.com
+- name: 荷兰|55|8.3|16
+  type: vless
+  server: 51.194.118.38
+  port: 443
+  uuid: 7ff1e7e1-2b5a-4e53-ae77-1516f9eb7754
+  udp: true
+  tls: true
+  servername: a1259.ve8nzuk.com
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  network: grpc
+  grpc-opts:
+    grpc-service-name: 50a5f706c8ea4433838a207d435fbf031b008a9a
+- name: 意大利|4|7.7|17
+  type: ss
+  server: 202.50.253.45
+  port: 19999
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  udp: true
+- name: 印度尼西亚|88|5.0|18
+  type: socks5
+  server: 203.84.138.59
+  port: 62000
+  username: 9tcjLp2W
+  password: RRWtX6XP
+- name: 日本|61|4.3|19
+  type: socks5
+  server: 103.248.150.66
+  port: 42000
+  udp: true
+  username: paZFN3JA
+  password: EGJDy5Kg
+- name: 台湾|67|3.9|20
+  type: anytls
+  server: rtifgjdr.df6h451rh.xin
+  port: 443
+  password: 2902c46c8493
+  udp: true
+  sni: docs.microsoft.com
+  skip-cert-verify: true
+- name: 墨西哥|62|3.7|21
+  type: socks5
+  server: 94.194.165.32
+  port: 62000
+  udp: true
+  username: QyVdo5ks
+  password: lcFa8dTH
+- name: 香港|92|3.4|22
+  type: http
+  server: 38.76.140.254
+  port: 8443
+  tls: true
+  skip-cert-verify: true
+  udp: true
+proxy-groups:
+- name: Fast
+  type: select
+  proxies:
+  - 美国|20|42.5|01
+  - 美国|20|41.5|02
+  - 美国|69|33.9|03
+  - 美国|69|33.6|04
+  - 美国|51|32.6|05
+  - 美国|60|30.0|06
+  - 美国|69|28.2|07
+  - 美国|69|27.0|08
+  - 美国|57|26.6|09
+  - 美国|69|21.2|10
+  - 美国|54|16.5|11
+  - 美国|68|16.2|12
+  - 香港|96|12.1|13
+  - 越南|94|11.1|14
+  - 美国|42|10.7|15
+  - 荷兰|55|8.3|16
+  - 意大利|4|7.7|17
+  - 印度尼西亚|88|5.0|18
+  - 日本|61|4.3|19
+  - 台湾|67|3.9|20
+  - 墨西哥|62|3.7|21
+  - 香港|92|3.4|22
